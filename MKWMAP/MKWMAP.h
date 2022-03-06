@@ -7,7 +7,7 @@
 																								//Функция модуля
 double MKabs(double z) {
 	if (z > 0) return z;
-	if (z < 0) return z;
+	if (z < 0) return -z;
 	if (z == 0) return 0;
 }
 																								//Функция расчёта интеграла
@@ -34,17 +34,17 @@ double MKWIntg(double x, double a, double b, double s) {
 	}
 	return 0;
 }
-																								//Функция чтения формулы интеграла
+																								//Функция чтения и подсчёта формулы интеграла
 long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long double Qsi) {
 
 	long double F = 0;
 
 	const int c = 19;
-	wchar_t ch[c] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ',', '+', '-', '*', '/', '^', '(', ')', 'x' };
+	wchar_t ch[c] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ',', '+', '-', '*', '/', '^', '(', ')', 'x'/*, 's', 'i', 'n', 'c', 'o', 'l', 'o', 'g'*/ };
 
 	for (int i = 0; i < t->TextLength; i++)
 		for(int j = 0; j < c; j++)
-			if (System::Convert::ToChar(t->Text) == ch[j]) {
+			if (System::Convert::ToString(t->Text)[j] == ch[j]) {
 				//12.3+3.21*x/(2^(3))
 				switch (j)
 				{
@@ -89,7 +89,7 @@ long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long dou
 					break;
 				}
 				case 10: {
-					//функция запятой
+					F = F + MKWZP(t, i);
 					break;
 				}
 				case 11: {
@@ -121,7 +121,7 @@ long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long dou
 					break;
 				}
 				case 18: {
-					//qsi
+					F = MKWQsi(t, F, Qsi, i);
 					break;
 				}
 				default:
@@ -131,6 +131,30 @@ long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long dou
 				break;
 			}
 	return F;
+}
+																												//Функция для Qsi завершена
+long double MKWMAP::MyForm::MKWQsi(System::Windows::Forms::TextBox^ t, long double F, long double Qsi, int& i) {
+
+	if (i == 0) {
+		return Qsi;
+	}
+	else if (i > 0) {
+		if (System::Convert::ToString(t->Text)[i-1] == '+') {
+			return F + Qsi;
+		}
+		if (System::Convert::ToString(t->Text)[i - 1] == '-') {
+			return F - Qsi;
+		}
+		if (System::Convert::ToString(t->Text)[i - 1] == '*') {
+			return F * Qsi;
+		}
+		if (System::Convert::ToString(t->Text)[i - 1] == '/') {
+			return F / Qsi;
+		}
+		if (System::Convert::ToString(t->Text)[i - 1] == '^') {
+			return pow(F, Qsi);
+		}
+	}
 }
 
 long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long double Qsi, int& i) {
@@ -229,15 +253,14 @@ long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long dou
 	//		}
 	//return F;
 
-
 	long double F = 0;
 
 	const int c = 19;
 	wchar_t ch[c] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ',', '+', '-', '*', '/', '^', '(', ')', 'x' };
 
-	for (int i = 0; i < t->TextLength; i++)
+	for (i; i < t->TextLength; i++)
 		for (int j = 0; j < c; j++)
-			if (System::Convert::ToChar(t->Text) == ch[j]) {
+			if (System::Convert::ToString(t->Text)[i] == ch[j]) {
 				switch (j)
 				{
 				case 0: {
@@ -281,36 +304,36 @@ long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long dou
 					break;
 				}
 				case 10: {
-					//функция запятой
+					F = F + MKWZP(t, i);
 					break;
 				}
 				case 11: {
-					//F = F + MKWFUNC(t, Qsi, i);
-					i--;
+					i++;
+					F = F + MKWFUNC(t, Qsi, i);
 					return F;
 					break;
 				}
 				case 12: {
-					//F = F - MKWFUNC(t, Qsi, i);
-					i--;
+					i++;
+					F = F - MKWFUNC(t, Qsi, i);
 					return F;
 					break;
 				}
 				case 13: {
-					//F = F * MKWFUNC(t, Qsi, i);
-					i--;
+					i++;
+					F = F * MKWFUNC(t, Qsi, i);
 					return F;
 					break;
 				}
 				case 14: {
-					//F = F / MKWFUNC(t, Qsi, i);
-					i--;
+					i++;
+					F = F / MKWFUNC(t, Qsi, i);
 					return F;
 					break;
 				}
 				case 15: {
-					//F = pow(F, MKWFUNC(t, Qsi, i));
-					i--;
+					i++;
+					F = pow(F, MKWFUNC(t, Qsi, i));
 					return F;
 					break;
 				}
@@ -319,11 +342,12 @@ long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long dou
 					break;
 				}
 				case 17: {
-					//error
+					i++;
+					return F;
 					break;
 				}
 				case 18: {
-					//qsi
+					F = MKWQsi(t, F, Qsi, i);
 					break;
 				}
 				default:
@@ -337,5 +361,76 @@ long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long dou
 
 long double MKWMAP::MyForm::MKWpow(System::Windows::Forms::TextBox^ t, long double Qsi, int& i) {
 	return Qsi;
+}
+																											//Функция чтения чисел после запятой завершена
+long double MKWMAP::MyForm::MKWZP(System::Windows::Forms::TextBox^ t, int& i) {
 
+	long double F = 0;
+	int q = 1;
+
+	const int c = 19;
+	wchar_t ch[c] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ',', '+', '-', '*', '/', '^', '(', ')', 'x'/*, 's', 'i', 'n', 'c', 'o', 'l', 'o', 'g'*/ };
+
+	for (int i = 0; i < t->TextLength; i++)
+		for (int j = 0; j < c; j++)
+			if (System::Convert::ToString(t->Text)[i] == ch[j]) {
+				//12.3+3.21*x/(2^(3))
+				switch (j)
+				{
+				case 0: {;
+					q++;
+					break;
+				}
+				case 1: {
+					F = F + 1 * pow(10, -q);
+					q++;
+					break;
+				}
+				case 2: {
+					F = F + 2 * pow(10, -q);
+					q++;
+					break;
+				}
+				case 3: {
+					F = F + 3 * pow(10, -q);
+					q++;
+					break;
+				}
+				case 4: {
+					F = F + 4 * pow(10, -q);
+					q++;
+					break;
+				}
+				case 5: {
+					F = F + 5 * pow(10, -q);
+					q++;
+					break;
+				}
+				case 6: {
+					F = F + 6 * pow(10, -q);
+					q++;
+					break;
+				}
+				case 7: {
+					F = F + 7 * pow(10, -q);
+					q++;
+					break;
+				}
+				case 8: {
+					F = F + 8 * pow(10, -q);
+					q++;
+					break;
+				}
+				case 9: {
+					F = F + 9 * pow(10, -q);
+					q++;
+					break;
+				}
+				default:
+					return F;
+					break;
+				}
+				break;
+			}
+	return F;
 }
