@@ -40,7 +40,7 @@ long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long dou
 	long double F = 0;
 
 	const int c = 19;
-	wchar_t ch[c] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ',', '+', '-', '*', '/', '^', '(', ')', 'x'/*, 's', 'i', 'n', 'c', 'o', 'l', 'o', 'g'*/ };
+	wchar_t ch[c] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ',', '+', '-', '*', '/', '^', '(', ')', 'x' };
 
 	for (int i = 0; i < t->TextLength; i++)
 		for(int j = 0; j < c; j++)
@@ -113,7 +113,7 @@ long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long dou
 					break;
 				}
 				case 16: {
-					//Функция скобок
+					F = MKWSQB(t, Qsi, i, F);
 					break;
 				}
 				case 17: {
@@ -338,12 +338,11 @@ long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long dou
 					break;
 				}
 				case 16: {
-					//Функция скобок
+					F = MKWSQB(t, Qsi, i, F);
 					break;
 				}
 				case 17: {
-					i++;
-					return F;
+					//error
 					break;
 				}
 				case 18: {
@@ -428,6 +427,145 @@ long double MKWMAP::MyForm::MKWZP(System::Windows::Forms::TextBox^ t, int& i) {
 				}
 				default:
 					return F;
+					break;
+				}
+				break;
+			}
+	return F;
+}
+
+long double MKWMAP::MyForm::MKWSQB(System::Windows::Forms::TextBox^ t, long double Qsi, int& i, long double FUNC) {
+	int cmd;
+	if (System::Convert::ToString(t->Text)[i - 1] == '+') cmd = 1;
+	else if (System::Convert::ToString(t->Text)[i - 1] == '-') cmd = 2;
+	else if (System::Convert::ToString(t->Text)[i - 1] == '*') cmd = 3;
+	else if (System::Convert::ToString(t->Text)[i - 1] == '/') cmd = 4;
+	else if (System::Convert::ToString(t->Text)[i - 1] == '^') cmd = 5;
+
+	i++;
+
+	long double F = 0;
+
+	const int c = 19;
+	wchar_t ch[c] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ',', '+', '-', '*', '/', '^', '(', ')', 'x' };
+
+	for (i; i < t->TextLength; i++)
+		for (int j = 0; j < c; j++)
+			if (System::Convert::ToString(t->Text)[i] == ch[j]) {
+				switch (j)
+				{
+				case 0: {
+					F = F * 10;
+					break;
+				}
+				case 1: {
+					F = F * 10 + 1;
+					break;
+				}
+				case 2: {
+					F = F * 10 + 2;
+					break;
+				}
+				case 3: {
+					F = F * 10 + 3;
+					break;
+				}
+				case 4: {
+					F = F * 10 + 4;
+					break;
+				}
+				case 5: {
+					F = F * 10 + 5;
+					break;
+				}
+				case 6: {
+					F = F * 10 + 6;
+					break;
+				}
+				case 7: {
+					F = F * 10 + 7;
+					break;
+				}
+				case 8: {
+					F = F * 10 + 8;
+					break;
+				}
+				case 9: {
+					F = F * 10 + 9;
+					break;
+				}
+				case 10: {
+					F = F + MKWZP(t, i);
+					break;
+				}
+				case 11: {
+					i++;
+					F = F + MKWFUNC(t, Qsi, i);
+					return F;
+					break;
+				}
+				case 12: {
+					i++;
+					F = F - MKWFUNC(t, Qsi, i);
+					return F;
+					break;
+				}
+				case 13: {
+					i++;
+					F = F * MKWFUNC(t, Qsi, i);
+					return F;
+					break;
+				}
+				case 14: {
+					i++;
+					F = F / MKWFUNC(t, Qsi, i);
+					return F;
+					break;
+				}
+				case 15: {
+					i++;
+					F = pow(F, MKWFUNC(t, Qsi, i));
+					return F;
+					break;
+				}
+				case 16: {
+					F = MKWSQB(t, Qsi, i, F);
+					break;
+				}
+				case 17: {
+					switch (cmd)
+					{
+					case 1: {
+						return FUNC + F;
+						break;
+					}
+					case 2: {
+						return FUNC - F;
+						break;
+					}
+					case 3: {
+						return FUNC * F;
+						break;
+					}
+					case 4: {
+						return FUNC / F;
+						break;
+					}
+					case 5: {
+						return pow(FUNC, F);
+						break;
+					}
+					default:
+						break;
+					}
+					break;
+				}
+				case 18: {
+					F = MKWQsi(t, F, Qsi, i);
+					break;
+				}
+				default:
+					//Введён нечитаемый символ
 					break;
 				}
 				break;
