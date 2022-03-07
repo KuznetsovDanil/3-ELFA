@@ -1,7 +1,6 @@
 #include "MKWFormLib.h"
 #include <Windows.h>																			
 #include <string>
-
 #include <iostream>
 
 using namespace MKWMAP; // Название проекта

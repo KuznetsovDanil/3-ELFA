@@ -345,6 +345,8 @@ namespace MKWMAP {
 		private: long double MKWMAP::MyForm::MKWZP(System::Windows::Forms::TextBox^, int&);
 		private: long double MKWMAP::MyForm::MKWQsi(System::Windows::Forms::TextBox^, long double, long double, int&);
 		private: long double MKWMAP::MyForm::MKWSQB(System::Windows::Forms::TextBox^, long double, int&, long double);
+		private: long double MKWMAP::MyForm::MKWIntg(System::Windows::Forms::TextBox^, double, double, double, double);
+		private: void MKWMAP::MyForm::MKWER();
 		private: void DeffParams();
 		private: void ClearOut();
 };

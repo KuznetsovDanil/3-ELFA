@@ -36,6 +36,11 @@ System::Void MKWMAP::MyForm::OUTGraph_Click(System::Object^ sender, System::Even
 		b = System::Convert::ToDouble(textBoxB->Text);
 		x = a;
 		s = System::Convert::ToDouble(Stepper->Text);
+		//Проверка корректости значений
+		if (b < a) {
+			MessageBox::Show("Вы ввели некоректные значения параметров а и b.","Внимание!");
+			return;
+		}
 	}
 	//Очистка графиков
 	this->chart->Series[0]->Points->Clear();
@@ -77,6 +82,7 @@ System::Void MKWMAP::MyForm::textBoxGetInt_KeyPress(System::Object^ sender, Syst
 {
 	ClearOut();
 }
+
 //Подстановка дефолтных значений
 void MKWMAP::MyForm::DeffParams()
 {
@@ -87,6 +93,7 @@ void MKWMAP::MyForm::DeffParams()
 	x = a;
 	s = 0.1;
 }
+
 //Функция очистки экрана
 void MKWMAP::MyForm::ClearOut()
 {
@@ -94,6 +101,7 @@ void MKWMAP::MyForm::ClearOut()
 	this->chart->Series[0]->Points->Clear();
 	this->chart->Series[1]->Points->Clear();
 }
+
 //Функция проверка корректного ввода
 bool MKWMAP::MyForm::MKWCHECK(System::Windows::Forms::TextBox^ t) {
 	for (int i = 0; i < (t->TextLength); i++)
@@ -103,6 +111,7 @@ bool MKWMAP::MyForm::MKWCHECK(System::Windows::Forms::TextBox^ t) {
 		}
 	return false;
 }
+
 //Функция проверки коректного ввода интеграла
 bool MKWMAP::MyForm::MKWCHECK(System::Windows::Forms::TextBox^ t, bool l) {
 	const int c = 18;

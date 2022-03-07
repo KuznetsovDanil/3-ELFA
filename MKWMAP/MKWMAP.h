@@ -4,37 +4,27 @@
 #include<math.h>
 
 #define DMAX pow(1.7976931348623158,pow(10,308))
-																								//Функция модуля
+
+																												//Функция для оповещения о некорректно введённом символе
+void MKWMAP::MyForm::MKWER() {
+	System::Windows::Forms::MessageBox::Show("Введён некорректный символ, подсчёт может оказаться не верным или может произойти краш программы.", "Внимание!");
+}
+																												//Функция модуля
 double MKabs(double z) {
 	if (z > 0) return z;
 	if (z < 0) return -z;
 	if (z == 0) return 0;
 }
-																								//Функция расчёта интеграла
-double MKWIntg(double x, double a, double b, double s) {
-																								//Задние n отрезков
-	double* X;
-	int n = DMAX;
-	X = new double[n];
-	for (int i = 0; i < n; i++) {
-		if (i != 0)	X[i] = a + MKabs(b - a) / i;
-		else X[i] = a;
-		if (i == n - 1) X[i] = b;
-	}
+																												//Функция расчёта интеграла
+long double MKWMAP::MyForm::MKWIntg(System::Windows::Forms::TextBox^ t, double x, double a, double b, double s) {
 
-	long double* Qsi;
-	Qsi = new long double[n];
-																								//Задание Кси и dx
-	double* dX;
-	dX = new double[n];
-	for (int i = 1; i < n; i++) {
-		dX[i] = X[i] - X[i - 1];
+	long double F = MKWMAP::MyForm::MKWFUNC(t, (a+b)/2);
 
-		Qsi[i] = (X[i] - X[i - 1]) / 2;
-	}
+
 	return 0;
 }
-																								//Функция чтения и подсчёта формулы интеграла
+
+																												//Функция чтения и подсчёта формулы интеграла
 long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long double Qsi) {
 
 	long double F = 0;
@@ -109,7 +99,7 @@ long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long dou
 					break;
 				}
 				case 15: {
-					F = pow(F, MKWFUNC(t, Qsi, i));
+					F = MKWpow(t, Qsi, i);
 					break;
 				}
 				case 16: {
@@ -125,13 +115,15 @@ long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long dou
 					break;
 				}
 				default:
-					//Введён нечитаемый символ
+					MKWER();
+					return F;
 					break;
 				}
 				break;
 			}
 	return F;
 }
+
 																												//Функция для Qsi завершена
 long double MKWMAP::MyForm::MKWQsi(System::Windows::Forms::TextBox^ t, long double F, long double Qsi, int& i) {
 
@@ -139,7 +131,7 @@ long double MKWMAP::MyForm::MKWQsi(System::Windows::Forms::TextBox^ t, long doub
 		return Qsi;
 	}
 	else if (i > 0) {
-		if (System::Convert::ToString(t->Text)[i-1] == '+') {
+		if (System::Convert::ToString(t->Text)[i - 1] == '+') {
 			return F + Qsi;
 		}
 		if (System::Convert::ToString(t->Text)[i - 1] == '-') {
@@ -152,11 +144,12 @@ long double MKWMAP::MyForm::MKWQsi(System::Windows::Forms::TextBox^ t, long doub
 			return F / Qsi;
 		}
 		if (System::Convert::ToString(t->Text)[i - 1] == '^') {
-			return pow(F, Qsi);
+			return F = MKWpow(t, Qsi, i);
 		}
 	}
 }
 
+																												//Вторичная функция чтения и подсчёта формулы интеграла
 long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long double Qsi, int& i) {
 	//Старая версия
 	//long double F = 0, s = 0;
@@ -332,8 +325,7 @@ long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long dou
 					break;
 				}
 				case 15: {
-					i++;
-					F = pow(F, MKWFUNC(t, Qsi, i));
+					F = MKWpow(t, Qsi, i);
 					return F;
 					break;
 				}
@@ -350,7 +342,8 @@ long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long dou
 					break;
 				}
 				default:
-					//Введён нечитаемый символ
+					MKWER();
+					return F;
 					break;
 				}
 				break;
@@ -358,10 +351,13 @@ long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long dou
 	return F;
 }
 
+																												//Функция обработки степени
 long double MKWMAP::MyForm::MKWpow(System::Windows::Forms::TextBox^ t, long double Qsi, int& i) {
-	return Qsi;
+	i++;
+	return MKWFUNC(t, Qsi, i);
 }
-																											//Функция чтения чисел после запятой завершена
+
+																												//Функция чтения чисел после запятой завершена
 long double MKWMAP::MyForm::MKWZP(System::Windows::Forms::TextBox^ t, int& i) {
 
 	long double F = 0;
@@ -434,6 +430,7 @@ long double MKWMAP::MyForm::MKWZP(System::Windows::Forms::TextBox^ t, int& i) {
 	return F;
 }
 
+																												//Функция обработки скобок завершена
 long double MKWMAP::MyForm::MKWSQB(System::Windows::Forms::TextBox^ t, long double Qsi, int& i, long double FUNC) {
 	int cmd;
 	if (System::Convert::ToString(t->Text)[i - 1] == '+') cmd = 1;
@@ -523,8 +520,7 @@ long double MKWMAP::MyForm::MKWSQB(System::Windows::Forms::TextBox^ t, long doub
 					break;
 				}
 				case 15: {
-					i++;
-					F = pow(F, MKWFUNC(t, Qsi, i));
+					F = MKWpow(t, Qsi, i);
 					return F;
 					break;
 				}
@@ -565,7 +561,8 @@ long double MKWMAP::MyForm::MKWSQB(System::Windows::Forms::TextBox^ t, long doub
 					break;
 				}
 				default:
-					//Введён нечитаемый символ
+					MKWER();
+					return F;
 					break;
 				}
 				break;
