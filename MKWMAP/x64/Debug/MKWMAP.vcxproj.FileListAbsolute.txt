@@ -1,4 +1,0 @@
-C:\Univer\Универ\МА\ПРОЕКТ\MKWMAP\MKWMAP\x64\Debug\MKWMAP.vcxproj.AssemblyReference.cache
-C:\Univer\Универ\МА\ПРОЕКТ\MKWMAP\MKWMAP\x64\Debug\MKWMAP.vcxproj.SuggestedBindingRedirects.cache
-C:\Univer\Универ\МА\ПРОЕКТ\MKWMAP\MKWMAP\x64\Debug\MKWMAP.MyForm.resources
-C:\Univer\Универ\МА\ПРОЕКТ\MKWMAP\MKWMAP\x64\Debug\MKWMAP.vcxproj.GenerateResource.cache
