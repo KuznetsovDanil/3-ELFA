@@ -1,8 +1,5 @@
 ﻿  MyForm.cpp
-C:\Univer\Универ\МА\ПРОЕКТ\MKWMAP\MKWMAP\MKWMAP.h(22,8): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
-C:\Univer\Универ\МА\ПРОЕКТ\MKWMAP\MKWMAP\MKWFormLib.h(59,55): warning C4244: аргумент: преобразование "__int64" в "int", возможна потеря данных
-C:\Univer\Универ\МА\ПРОЕКТ\MKWMAP\MKWMAP\MKWFormLib.h(59,61): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
 C:\Univer\Универ\МА\ПРОЕКТ\MKWMAP\MKWMAP\MKWMAP.h(17): warning C4715: MKabs: значение возвращается не при всех путях выполнения
-C:\Univer\Универ\МА\ПРОЕКТ\MKWMAP\MKWMAP\MKWMAP.h(164): warning C4715: MKWMAP::MyForm::MKWQsi: значение возвращается не при всех путях выполнения
+C:\Univer\Универ\МА\ПРОЕКТ\MKWMAP\MKWMAP\MKWMAP.h(150): warning C4715: MKWMAP::MyForm::MKWQsi: значение возвращается не при всех путях выполнения
   MyForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
   MKWMAP.vcxproj -> C:\Univer\Универ\МА\ПРОЕКТ\MKWMAP\x64\Debug\MKWMAP.exe

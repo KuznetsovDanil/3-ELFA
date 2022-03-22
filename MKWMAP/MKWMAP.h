@@ -16,7 +16,7 @@ double MKabs(double z) {
 	if (z == 0) return 0;
 }
 																												//Функция расчёта интеграла
-long double MKWMAP::MyForm::MKWIntg(System::Windows::Forms::TextBox^ t, double x, double a, double b, double s) {
+long double MKWMAP::MyForm::MKWIntg(System::Windows::Forms::ToolStripTextBox^ t, double x, double a, double b, double s) {
 
 	long double F = MKWMAP::MyForm::MKWFUNC(t, (a+b)/2);
 
@@ -25,7 +25,7 @@ long double MKWMAP::MyForm::MKWIntg(System::Windows::Forms::TextBox^ t, double x
 }
 
 																												//Функция чтения и подсчёта формулы интеграла
-long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long double Qsi) {
+long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::ToolStripTextBox^ t, long double Qsi) {
 
 	long double F = 0;
 
@@ -125,7 +125,7 @@ long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long dou
 }
 
 																												//Функция для Qsi завершена
-long double MKWMAP::MyForm::MKWQsi(System::Windows::Forms::TextBox^ t, long double F, long double Qsi, int& i) {
+long double MKWMAP::MyForm::MKWQsi(System::Windows::Forms::ToolStripTextBox^ t, long double F, long double Qsi, int& i) {
 
 	if (i == 0) {
 		return Qsi;
@@ -150,7 +150,7 @@ long double MKWMAP::MyForm::MKWQsi(System::Windows::Forms::TextBox^ t, long doub
 }
 
 																												//Вторичная функция чтения и подсчёта формулы интеграла
-long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long double Qsi, int& i) {
+long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::ToolStripTextBox^ t, long double Qsi, int& i) {
 	//Старая версия
 	//long double F = 0, s = 0;
 	//const int c = 19;
@@ -352,13 +352,13 @@ long double MKWMAP::MyForm::MKWFUNC(System::Windows::Forms::TextBox^ t, long dou
 }
 
 																												//Функция обработки степени
-long double MKWMAP::MyForm::MKWpow(System::Windows::Forms::TextBox^ t, long double Qsi, int& i) {
+long double MKWMAP::MyForm::MKWpow(System::Windows::Forms::ToolStripTextBox^ t, long double Qsi, int& i) {
 	i++;
 	return MKWFUNC(t, Qsi, i);
 }
 
 																												//Функция чтения чисел после запятой завершена
-long double MKWMAP::MyForm::MKWZP(System::Windows::Forms::TextBox^ t, int& i) {
+long double MKWMAP::MyForm::MKWZP(System::Windows::Forms::ToolStripTextBox^ t, int& i) {
 
 	long double F = 0;
 	int q = 1;
@@ -431,7 +431,7 @@ long double MKWMAP::MyForm::MKWZP(System::Windows::Forms::TextBox^ t, int& i) {
 }
 
 																												//Функция обработки скобок завершена
-long double MKWMAP::MyForm::MKWSQB(System::Windows::Forms::TextBox^ t, long double Qsi, int& i, long double FUNC) {
+long double MKWMAP::MyForm::MKWSQB(System::Windows::Forms::ToolStripTextBox^ t, long double Qsi, int& i, long double FUNC) {
 	int cmd;
 	if (System::Convert::ToString(t->Text)[i - 1] == '+') cmd = 1;
 	else if (System::Convert::ToString(t->Text)[i - 1] == '-') cmd = 2;
