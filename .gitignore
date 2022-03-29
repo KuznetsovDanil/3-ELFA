@@ -1,3 +1,6 @@
-x64/
-.vs/
-MKWMAP/x64/
+﻿.vs/
+Release/
+!Release/Project1.exe
+Debug/
+Project1/Debug/
+Project1/Release/
