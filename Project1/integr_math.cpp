@@ -50,26 +50,25 @@ double integral(double a, double b, int c, int n, int method) {
 		// Формула Симпсона \\
 		
 		//bool flag; можно воспользоваться флагом для отслеживания четности номера
-		double i;
 		double res2 = 0;
 		
 		if (a < b) {
 			// С нечетными номерами
-			for (i = a + step; b - i > step; i += 2 * step)
+			for (double i = a + step; b - i > step; i += 2 * step)
 				res += test_function(i, c);
 
 			// С четными номерами
-			for (i = a + 2 * step; b - i > step; i += 2 * step)
+			for (double i = a + 2 * step; b - i > step; i += 2 * step)
 				res2 += test_function(i, c);
 		}
 		// Интегрирование справа налево (в данном случае приращение будет отрицательным)
 		else {
 			// С нечетными номерами
-			for (i = a + step; i - b > step; i += 2 * step)
+			for (double i = a + step; i - b > step; i += 2 * step)
 				res += test_function(i, c);
 
 			// С четными номерами
-			for (i = a + 2 * step; i - b > step; i += 2 * step)
+			for (double i = a + 2 * step; i - b > step; i += 2 * step)
 				res2 += test_function(i, c);
 		}
 
