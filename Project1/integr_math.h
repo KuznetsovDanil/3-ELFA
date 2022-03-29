@@ -1,2 +1,2 @@
 #pragma once
-double integral(double, double, int, int);
+double integral(double, double, int, int, int);

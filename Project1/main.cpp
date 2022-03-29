@@ -39,7 +39,7 @@ res - переменная для вычисления интеграла
 int main() {
 	setlocale(0, "");
 	double a, b;
-	int n, c;
+	int n, c, method;
 	cout << "Нижняя граница: ";
 	cin >> a;
 	cout << "Верхняя граница: ";
@@ -48,7 +48,9 @@ int main() {
 	cin >> c;
 	cout << "Количество разбиений: ";
 	cin >> n;
-	cout << "Результат: " << integral(a, b, c, n) << "\n" << "Истинный ответ: " << answer(a, b, c) << "\n";
+	cout << "Метод интегрирования: ";
+	cin >> method;
+	cout << "Результат: " << integral(a, b, c, n, method) << "\n" << "Истинный ответ: " << answer(a, b, c) << "\n";
 	system("pause");
 	return 0;
 }
