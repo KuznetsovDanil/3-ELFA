@@ -35,20 +35,45 @@ double integral(double a, double b, int c, int n, int method) {
 		// Формула трапеции \\
 
 		if (a < b)
-		for (double i = a + step; b - i > step; i += step)
-			res += test_function(i, c);
+			for (double i = a + step; b - i > step; i += step)
+				res += test_function(i, c);
 
 		// Интегрирование справа налево (в данном случае приращение будет отрицательным)
 		else
-		for (double i = a + step; i - b > step; i += step)
-			res += test_function(i, c);
+			for (double i = a + step; i - b > step; i += step)
+				res += test_function(i, c);
 
 		return (2 * res + test_function(a, c) + test_function(b, c)) * step / 2;
 		//------------------\\
 
-	//case 3:
+	case 3:
 		// Формула Симпсона \\
 		
+		//bool flag; можно воспользоваться флагом для отслеживания четности номера
+		double i;
+		double res2 = 0;
+		
+		if (a < b) {
+			// С нечетными номерами
+			for (i = a + step; b - i > step; i += 2 * step)
+				res += test_function(i, c);
+
+			// С четными номерами
+			for (i = a + 2 * step; b - i > step; i += 2 * step)
+				res2 += test_function(i, c);
+		}
+		// Интегрирование справа налево (в данном случае приращение будет отрицательным)
+		else {
+			// С нечетными номерами
+			for (i = a + step; i - b > step; i += 2 * step)
+				res += test_function(i, c);
+
+			// С четными номерами
+			for (i = a + 2 * step; i - b > step; i += 2 * step)
+				res2 += test_function(i, c);
+		}
+
+		return (res * 4 + res2 * 2 + test_function(a, c) + test_function(b, c)) * step / 3;
 		//------------------\\
 
 	}
