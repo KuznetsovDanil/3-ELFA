@@ -1,6 +1,6 @@
-﻿.vs/
-Release/
-!Release/Project1.exe
+﻿/
+.vs/
+Release/Project1.pdb
 Debug/
 Project1/Debug/
 Project1/Release/
