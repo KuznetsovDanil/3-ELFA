@@ -38,7 +38,7 @@ namespace MKWMAP {
 	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart;
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^ ìåíşToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ OUTGraph;
+
 	private: System::Windows::Forms::ToolStripMenuItem^ î÷èñòèòüÃğàôèêToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ äàííûåToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ RASCHET;
@@ -75,9 +75,8 @@ namespace MKWMAP {
 			this->chart = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->ìåíşToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->OUTGraph = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->î÷èñòèòüÃğàôèêToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->RASCHET = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->î÷èñòèòüÃğàôèêToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->äàííûåToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->ğåçóëüòàòToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->ïåğâûéToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -102,7 +101,7 @@ namespace MKWMAP {
 			this->chart->Dock = System::Windows::Forms::DockStyle::Fill;
 			legend1->Name = L"Legend1";
 			this->chart->Legends->Add(legend1);
-			this->chart->Location = System::Drawing::Point(0, 30);
+			this->chart->Location = System::Drawing::Point(0, 28);
 			this->chart->Name = L"chart";
 			series1->ChartArea = L"ChartArea1";
 			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::SplineArea;
@@ -116,7 +115,7 @@ namespace MKWMAP {
 			series2->Name = L"Series1";
 			this->chart->Series->Add(series1);
 			this->chart->Series->Add(series2);
-			this->chart->Size = System::Drawing::Size(608, 348);
+			this->chart->Size = System::Drawing::Size(608, 350);
 			this->chart->TabIndex = 1;
 			this->chart->Text = L"chart1";
 			// 
@@ -129,45 +128,38 @@ namespace MKWMAP {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(608, 30);
+			this->menuStrip1->Size = System::Drawing::Size(608, 28);
 			this->menuStrip1->TabIndex = 2;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
 			// ìåíşToolStripMenuItem
 			// 
-			this->ìåíşToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->OUTGraph,
-					this->RASCHET, this->î÷èñòèòüÃğàôèêToolStripMenuItem
+			this->ìåíşToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->RASCHET,
+					this->î÷èñòèòüÃğàôèêToolStripMenuItem
 			});
 			this->ìåíşToolStripMenuItem->Name = L"ìåíşToolStripMenuItem";
-			this->ìåíşToolStripMenuItem->Size = System::Drawing::Size(65, 26);
+			this->ìåíşToolStripMenuItem->Size = System::Drawing::Size(65, 24);
 			this->ìåíşToolStripMenuItem->Text = L"Ìåíş";
-			// 
-			// OUTGraph
-			// 
-			this->OUTGraph->Name = L"OUTGraph";
-			this->OUTGraph->Size = System::Drawing::Size(224, 26);
-			this->OUTGraph->Text = L"Ïîñòğîèòü ãğàôèê";
-			this->OUTGraph->Click += gcnew System::EventHandler(this, &MyForm::OUTGraph_Click);
-			// 
-			// î÷èñòèòüÃğàôèêToolStripMenuItem
-			// 
-			this->î÷èñòèòüÃğàôèêToolStripMenuItem->Name = L"î÷èñòèòüÃğàôèêToolStripMenuItem";
-			this->î÷èñòèòüÃğàôèêToolStripMenuItem->Size = System::Drawing::Size(224, 26);
-			this->î÷èñòèòüÃğàôèêToolStripMenuItem->Text = L"Î÷èñòèòü ãğàôèê";
-			this->î÷èñòèòüÃğàôèêToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::ClearOut);
 			// 
 			// RASCHET
 			// 
 			this->RASCHET->Name = L"RASCHET";
-			this->RASCHET->Size = System::Drawing::Size(224, 26);
-			this->RASCHET->Text = L"Ğàñ÷èòàòü";
+			this->RASCHET->Size = System::Drawing::Size(249, 26);
+			this->RASCHET->Text = L"Ğàñ÷èòàòü è ïîñòğîèòü";
 			this->RASCHET->Click += gcnew System::EventHandler(this, &MyForm::RASCHET_Click);
+			// 
+			// î÷èñòèòüÃğàôèêToolStripMenuItem
+			// 
+			this->î÷èñòèòüÃğàôèêToolStripMenuItem->Name = L"î÷èñòèòüÃğàôèêToolStripMenuItem";
+			this->î÷èñòèòüÃğàôèêToolStripMenuItem->Size = System::Drawing::Size(249, 26);
+			this->î÷èñòèòüÃğàôèêToolStripMenuItem->Text = L"Î÷èñòèòü ãğàôèê";
+			this->î÷èñòèòüÃğàôèêToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::ClearOut);
 			// 
 			// äàííûåToolStripMenuItem
 			// 
 			this->äàííûåToolStripMenuItem->Name = L"äàííûåToolStripMenuItem";
-			this->äàííûåToolStripMenuItem->Size = System::Drawing::Size(78, 26);
+			this->äàííûåToolStripMenuItem->Size = System::Drawing::Size(78, 24);
 			this->äàííûåToolStripMenuItem->Text = L"Äàííûå";
 			this->äàííûåToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::Open_Param_Window);
 			// 
@@ -180,7 +172,7 @@ namespace MKWMAP {
 			});
 			this->ğåçóëüòàòToolStripMenuItem->Name = L"ğåçóëüòàòToolStripMenuItem";
 			this->ğåçóëüòàòToolStripMenuItem->ShortcutKeyDisplayString = L"";
-			this->ğåçóëüòàòToolStripMenuItem->Size = System::Drawing::Size(89, 26);
+			this->ğåçóëüòàòToolStripMenuItem->Size = System::Drawing::Size(89, 24);
 			this->ğåçóëüòàòToolStripMenuItem->Text = L"Ğåçóëüòàò";
 			// 
 			// ïåğâûéToolStripMenuItem
@@ -274,7 +266,7 @@ namespace MKWMAP {
 		public: static int num;
 
 		private: System::Void RASCHET_Click(System::Object^ sender, System::EventArgs^ e);
-		private: System::Void OUTGraph_Click(System::Object^ sender, System::EventArgs^ e);
+		private: void OUTGraph_Click();
 		private: System::Void ClearOut(System::Object^ sender, System::EventArgs^ e);
 		private: void DeffParams();
 		private: void ClearOut();

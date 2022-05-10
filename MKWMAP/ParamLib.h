@@ -11,8 +11,16 @@ void MKWMAP::Params::Translate(System::Object^ sender, System::EventArgs^ e) {
 	MyForm::b = Params::b;
 	MyForm::x = MyForm::a;
 	MyForm::num = System::Convert::ToInt64(comboBox1->Text);
-
-	MessageBox::Show("Парметры были успешно изменены!", "Внимание!");
+	/*
+	Необходим другой способ выбора из списка
+	(2x+1)*e^(-x)
+	sin(x)+cos(x)
+	x^4-x^2+4
+	(2x^3+1)^4*x^2
+	(1+sin(x))^3*cos(x)*x
+	(x+3)/(x^2-5*x+6)
+	3/x^2
+	x^2*ln(x)*/
 }
 
 //Функция проверки

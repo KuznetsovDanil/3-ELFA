@@ -2,11 +2,15 @@
 
 //Библиотека функций взаимодействия
 
-#include "MKWMAP.h"	//Библиотека с функцией вычесления интеграла и библиотекой окна
+//#include "MKWMAP.h"	//Библиотека с функцией вычесления интеграла и библиотекой окна
+
+#include "integr_math.h"
 #include "MyForm.h"
 #include "ParamLib.h"
+#include "MainPage.h"
 
 System::Void MKWMAP::MyForm::RASCHET_Click(System::Object^ sender, System::EventArgs^ e) {
+	OUTGraph_Click();
 	labRESULT1->Text = Convert::ToString(integral(a, b, num, n, 1));
 	labRESULT2->Text = Convert::ToString(integral(a, b, num, n, 2));
 	labRESULT3->Text = Convert::ToString(integral(a, b, num, n, 3));
@@ -14,7 +18,7 @@ System::Void MKWMAP::MyForm::RASCHET_Click(System::Object^ sender, System::Event
 	MessageBox::Show("Расчёт окончен.", "Внимание!");
 }
 
-System::Void MKWMAP::MyForm::OUTGraph_Click(System::Object^ sender, System::EventArgs^ e) {
+void MKWMAP::MyForm::OUTGraph_Click() {
 
 	ClearOut();																					//Очистка экрана
 
@@ -43,12 +47,6 @@ System::Void MKWMAP::MyForm::OUTGraph_Click(System::Object^ sender, System::Even
 System::Void MKWMAP::MyForm::ClearOut(System::Object^ sender, System::EventArgs^ e) {
 	ClearOut();
 }
-
-////Функция очистки экрана при изменении значений в полях
-//System::Void MKWMAP::MyForm::textBox_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e)
-//{
-//	ClearOut();
-//}
 
 //Подстановка дефолтных значений
 void MKWMAP::MyForm::DeffParams()
