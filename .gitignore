@@ -1,4 +1,6 @@
-/
-x64/
+﻿/
 .vs/
-MKWMAP/x64/
+Release/Project1.pdb
+Debug/
+Project1/Debug/
+Project1/Release/
