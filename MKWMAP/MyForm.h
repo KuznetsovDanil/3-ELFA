@@ -34,73 +34,26 @@ namespace MKWMAP {
 				delete components;
 			}
 		}
-
 	protected:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart;
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^ ìåíþToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ OUTGraph;
-
 
 	private: System::Windows::Forms::ToolStripMenuItem^ î÷èñòèòüÃðàôèêToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ äàííûåToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ ïàðàìåòðÀToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripTextBox^ textBoxA;
-
-
-	private: System::Windows::Forms::ToolStripMenuItem^ ïàðàìåòðBToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripTextBox^ textBoxB;
-	private: System::Windows::Forms::ToolStripMenuItem^ textBoxI;
-
-
-
-
-
-
-
-	private: System::Windows::Forms::ToolStripMenuItem^ ñïîñîáÂû÷åñëåíèÿToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripTextBox^ textBoxN;
-
-	private: System::Windows::Forms::ToolStripSeparator^ toolStripSeparator1;
-	private: System::Windows::Forms::ToolStripMenuItem^ øàãÃðàôèêàToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripTextBox^ Stepper;
-	private: System::Windows::Forms::ToolStripTextBox^ labRESULT;
-
-
-
 	private: System::Windows::Forms::ToolStripMenuItem^ RASCHET;
-	private: System::Windows::Forms::ToolStripTextBox^ toolStripTextBox1;
-
-
-
-
-
-
-
-
-
-
-
+	private: System::Windows::Forms::ToolStripMenuItem^ ðåçóëüòàòToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ ïåðâûéToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripTextBox^ labRESULT1;
+	private: System::Windows::Forms::ToolStripSeparator^ toolStripSeparator2;
+	private: System::Windows::Forms::ToolStripMenuItem^ âòîðîéToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripTextBox^ labRESULT2;
+	private: System::Windows::Forms::ToolStripSeparator^ toolStripSeparator3;
+	private: System::Windows::Forms::ToolStripMenuItem^ òðåòèéToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripTextBox^ labRESULT3;
+	private: System::Windows::Forms::ToolStripSeparator^ toolStripSeparator1;
+	private: System::Windows::Forms::ToolStripMenuItem^ toolStripMenuItem1;
+	private: System::Windows::Forms::ToolStripTextBox^ labRESULTR;
 
 	private:
 		/// <summary>
@@ -115,55 +68,54 @@ namespace MKWMAP {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series5 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series6 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->chart = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->ìåíþToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->OUTGraph = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->î÷èñòèòüÃðàôèêToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->RASCHET = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->î÷èñòèòüÃðàôèêToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->äàííûåToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->ïàðàìåòðÀToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->textBoxA = (gcnew System::Windows::Forms::ToolStripTextBox());
-			this->ïàðàìåòðBToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->textBoxB = (gcnew System::Windows::Forms::ToolStripTextBox());
-			this->ñïîñîáÂû÷åñëåíèÿToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->textBoxN = (gcnew System::Windows::Forms::ToolStripTextBox());
-			this->textBoxI = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->toolStripTextBox1 = (gcnew System::Windows::Forms::ToolStripTextBox());
+			this->ðåçóëüòàòToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ïåðâûéToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->labRESULT1 = (gcnew System::Windows::Forms::ToolStripTextBox());
+			this->toolStripSeparator2 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->âòîðîéToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->labRESULT2 = (gcnew System::Windows::Forms::ToolStripTextBox());
+			this->toolStripSeparator3 = (gcnew System::Windows::Forms::ToolStripSeparator());
+			this->òðåòèéToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->labRESULT3 = (gcnew System::Windows::Forms::ToolStripTextBox());
 			this->toolStripSeparator1 = (gcnew System::Windows::Forms::ToolStripSeparator());
-			this->øàãÃðàôèêàToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->Stepper = (gcnew System::Windows::Forms::ToolStripTextBox());
-			this->labRESULT = (gcnew System::Windows::Forms::ToolStripTextBox());
+			this->toolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->labRESULTR = (gcnew System::Windows::Forms::ToolStripTextBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart))->BeginInit();
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// chart
 			// 
-			chartArea3->Name = L"ChartArea1";
-			this->chart->ChartAreas->Add(chartArea3);
+			chartArea1->Name = L"ChartArea1";
+			this->chart->ChartAreas->Add(chartArea1);
 			this->chart->Dock = System::Windows::Forms::DockStyle::Fill;
-			legend3->Name = L"Legend1";
-			this->chart->Legends->Add(legend3);
-			this->chart->Location = System::Drawing::Point(0, 31);
+			legend1->Name = L"Legend1";
+			this->chart->Legends->Add(legend1);
+			this->chart->Location = System::Drawing::Point(0, 28);
 			this->chart->Name = L"chart";
-			series5->ChartArea = L"ChartArea1";
-			series5->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::SplineArea;
-			series5->Color = System::Drawing::Color::Gold;
-			series5->Legend = L"Legend1";
-			series5->MarkerColor = System::Drawing::Color::White;
-			series5->Name = L"Series2";
-			series6->ChartArea = L"ChartArea1";
-			series6->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
-			series6->Legend = L"Legend1";
-			series6->Name = L"Series1";
-			this->chart->Series->Add(series5);
-			this->chart->Series->Add(series6);
-			this->chart->Size = System::Drawing::Size(608, 347);
+			series1->ChartArea = L"ChartArea1";
+			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::SplineArea;
+			series1->Color = System::Drawing::Color::Gold;
+			series1->Legend = L"Legend1";
+			series1->MarkerColor = System::Drawing::Color::White;
+			series1->Name = L"Series2";
+			series2->ChartArea = L"ChartArea1";
+			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+			series2->Legend = L"Legend1";
+			series2->Name = L"Series1";
+			this->chart->Series->Add(series1);
+			this->chart->Series->Add(series2);
+			this->chart->Size = System::Drawing::Size(608, 350);
 			this->chart->TabIndex = 1;
 			this->chart->Text = L"chart1";
 			// 
@@ -172,142 +124,123 @@ namespace MKWMAP {
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
 				this->ìåíþToolStripMenuItem,
-					this->äàííûåToolStripMenuItem, this->labRESULT
+					this->äàííûåToolStripMenuItem, this->ðåçóëüòàòToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(608, 31);
+			this->menuStrip1->Size = System::Drawing::Size(608, 28);
 			this->menuStrip1->TabIndex = 2;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
 			// ìåíþToolStripMenuItem
 			// 
-			this->ìåíþToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->OUTGraph,
-					this->î÷èñòèòüÃðàôèêToolStripMenuItem, this->RASCHET
+			this->ìåíþToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->RASCHET,
+					this->î÷èñòèòüÃðàôèêToolStripMenuItem
 			});
 			this->ìåíþToolStripMenuItem->Name = L"ìåíþToolStripMenuItem";
-			this->ìåíþToolStripMenuItem->Size = System::Drawing::Size(65, 27);
+			this->ìåíþToolStripMenuItem->Size = System::Drawing::Size(65, 24);
 			this->ìåíþToolStripMenuItem->Text = L"Ìåíþ";
-			// 
-			// OUTGraph
-			// 
-			this->OUTGraph->Name = L"OUTGraph";
-			this->OUTGraph->Size = System::Drawing::Size(219, 26);
-			this->OUTGraph->Text = L"Ïîñòðîèòü ãðàôèê";
-			this->OUTGraph->Click += gcnew System::EventHandler(this, &MyForm::OUTGraph_Click);
-			// 
-			// î÷èñòèòüÃðàôèêToolStripMenuItem
-			// 
-			this->î÷èñòèòüÃðàôèêToolStripMenuItem->Name = L"î÷èñòèòüÃðàôèêToolStripMenuItem";
-			this->î÷èñòèòüÃðàôèêToolStripMenuItem->Size = System::Drawing::Size(219, 26);
-			this->î÷èñòèòüÃðàôèêToolStripMenuItem->Text = L"Î÷èñòèòü ãðàôèê";
-			this->î÷èñòèòüÃðàôèêToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::ClearOut);
 			// 
 			// RASCHET
 			// 
 			this->RASCHET->Name = L"RASCHET";
-			this->RASCHET->Size = System::Drawing::Size(219, 26);
-			this->RASCHET->Text = L"Ðàñ÷èòàòü";
+			this->RASCHET->Size = System::Drawing::Size(249, 26);
+			this->RASCHET->Text = L"Ðàñ÷èòàòü è ïîñòðîèòü";
 			this->RASCHET->Click += gcnew System::EventHandler(this, &MyForm::RASCHET_Click);
+			// 
+			// î÷èñòèòüÃðàôèêToolStripMenuItem
+			// 
+			this->î÷èñòèòüÃðàôèêToolStripMenuItem->Name = L"î÷èñòèòüÃðàôèêToolStripMenuItem";
+			this->î÷èñòèòüÃðàôèêToolStripMenuItem->Size = System::Drawing::Size(249, 26);
+			this->î÷èñòèòüÃðàôèêToolStripMenuItem->Text = L"Î÷èñòèòü ãðàôèê";
+			this->î÷èñòèòüÃðàôèêToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::ClearOut);
 			// 
 			// äàííûåToolStripMenuItem
 			// 
-			this->äàííûåToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(6) {
-				this->ïàðàìåòðÀToolStripMenuItem,
-					this->ïàðàìåòðBToolStripMenuItem, this->ñïîñîáÂû÷åñëåíèÿToolStripMenuItem, this->textBoxI, this->toolStripSeparator1, this->øàãÃðàôèêàToolStripMenuItem
-			});
 			this->äàííûåToolStripMenuItem->Name = L"äàííûåToolStripMenuItem";
-			this->äàííûåToolStripMenuItem->Size = System::Drawing::Size(78, 27);
+			this->äàííûåToolStripMenuItem->Size = System::Drawing::Size(78, 24);
 			this->äàííûåToolStripMenuItem->Text = L"Äàííûå";
+			this->äàííûåToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::Open_Param_Window);
 			// 
-			// ïàðàìåòðÀToolStripMenuItem
+			// ðåçóëüòàòToolStripMenuItem
 			// 
-			this->ïàðàìåòðÀToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->textBoxA });
-			this->ïàðàìåòðÀToolStripMenuItem->Name = L"ïàðàìåòðÀToolStripMenuItem";
-			this->ïàðàìåòðÀToolStripMenuItem->Size = System::Drawing::Size(252, 26);
-			this->ïàðàìåòðÀToolStripMenuItem->Text = L"Ïàðàìåòð à";
+			this->ðåçóëüòàòToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(11) {
+				this->ïåðâûéToolStripMenuItem,
+					this->labRESULT1, this->toolStripSeparator2, this->âòîðîéToolStripMenuItem, this->labRESULT2, this->toolStripSeparator3, this->òðåòèéToolStripMenuItem,
+					this->labRESULT3, this->toolStripSeparator1, this->toolStripMenuItem1, this->labRESULTR
+			});
+			this->ðåçóëüòàòToolStripMenuItem->Name = L"ðåçóëüòàòToolStripMenuItem";
+			this->ðåçóëüòàòToolStripMenuItem->ShortcutKeyDisplayString = L"";
+			this->ðåçóëüòàòToolStripMenuItem->Size = System::Drawing::Size(89, 24);
+			this->ðåçóëüòàòToolStripMenuItem->Text = L"Ðåçóëüòàò";
 			// 
-			// textBoxA
+			// ïåðâûéToolStripMenuItem
 			// 
-			this->textBoxA->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
-			this->textBoxA->Name = L"textBoxA";
-			this->textBoxA->Size = System::Drawing::Size(100, 27);
-			this->textBoxA->Text = L"-10";
-			this->textBoxA->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MyForm::textBox_KeyPress);
+			this->ïåðâûéToolStripMenuItem->Name = L"ïåðâûéToolStripMenuItem";
+			this->ïåðâûéToolStripMenuItem->Size = System::Drawing::Size(230, 26);
+			this->ïåðâûéToolStripMenuItem->Text = L"Ïåðâûé ñïîñîá";
 			// 
-			// ïàðàìåòðBToolStripMenuItem
+			// labRESULT1
 			// 
-			this->ïàðàìåòðBToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->textBoxB });
-			this->ïàðàìåòðBToolStripMenuItem->Name = L"ïàðàìåòðBToolStripMenuItem";
-			this->ïàðàìåòðBToolStripMenuItem->Size = System::Drawing::Size(252, 26);
-			this->ïàðàìåòðBToolStripMenuItem->Text = L"Ïàðàìåòð b";
+			this->labRESULT1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->labRESULT1->Name = L"labRESULT1";
+			this->labRESULT1->Size = System::Drawing::Size(100, 27);
+			this->labRESULT1->Text = L"Ðåçóëüòàò";
 			// 
-			// textBoxB
+			// toolStripSeparator2
 			// 
-			this->textBoxB->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
-			this->textBoxB->Name = L"textBoxB";
-			this->textBoxB->Size = System::Drawing::Size(100, 27);
-			this->textBoxB->Text = L"10";
-			this->textBoxB->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MyForm::textBox_KeyPress);
+			this->toolStripSeparator2->Name = L"toolStripSeparator2";
+			this->toolStripSeparator2->Size = System::Drawing::Size(227, 6);
 			// 
-			// ñïîñîáÂû÷åñëåíèÿToolStripMenuItem
+			// âòîðîéToolStripMenuItem
 			// 
-			this->ñïîñîáÂû÷åñëåíèÿToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->textBoxN });
-			this->ñïîñîáÂû÷åñëåíèÿToolStripMenuItem->Name = L"ñïîñîáÂû÷åñëåíèÿToolStripMenuItem";
-			this->ñïîñîáÂû÷åñëåíèÿToolStripMenuItem->Size = System::Drawing::Size(252, 26);
-			this->ñïîñîáÂû÷åñëåíèÿToolStripMenuItem->Text = L"Ïàðàìåòð n";
+			this->âòîðîéToolStripMenuItem->Name = L"âòîðîéToolStripMenuItem";
+			this->âòîðîéToolStripMenuItem->Size = System::Drawing::Size(230, 26);
+			this->âòîðîéToolStripMenuItem->Text = L"Âòîðîé ñïîñîá";
 			// 
-			// textBoxN
+			// labRESULT2
 			// 
-			this->textBoxN->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
-			this->textBoxN->Name = L"textBoxN";
-			this->textBoxN->Size = System::Drawing::Size(100, 27);
-			this->textBoxN->Text = L"1";
-			this->textBoxN->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MyForm::textBox_KeyPress);
+			this->labRESULT2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->labRESULT2->Name = L"labRESULT2";
+			this->labRESULT2->Size = System::Drawing::Size(100, 27);
+			this->labRESULT2->Text = L"Ðåçóëüòàò";
 			// 
-			// textBoxI
+			// toolStripSeparator3
 			// 
-			this->textBoxI->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->toolStripTextBox1 });
-			this->textBoxI->Name = L"textBoxI";
-			this->textBoxI->Size = System::Drawing::Size(252, 26);
-			this->textBoxI->Text = L"Âû÷åñëèòü èíòåãðàë îò";
+			this->toolStripSeparator3->Name = L"toolStripSeparator3";
+			this->toolStripSeparator3->Size = System::Drawing::Size(227, 6);
 			// 
-			// toolStripTextBox1
+			// òðåòèéToolStripMenuItem
 			// 
-			this->toolStripTextBox1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
-			this->toolStripTextBox1->Name = L"toolStripTextBox1";
-			this->toolStripTextBox1->Size = System::Drawing::Size(100, 27);
-			this->toolStripTextBox1->Text = L"1";
+			this->òðåòèéToolStripMenuItem->Name = L"òðåòèéToolStripMenuItem";
+			this->òðåòèéToolStripMenuItem->Size = System::Drawing::Size(230, 26);
+			this->òðåòèéToolStripMenuItem->Text = L"Òðåòèé ñïîñîá";
+			// 
+			// labRESULT3
+			// 
+			this->labRESULT3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->labRESULT3->Name = L"labRESULT3";
+			this->labRESULT3->Size = System::Drawing::Size(100, 27);
+			this->labRESULT3->Text = L"Ðåçóëüòàò";
 			// 
 			// toolStripSeparator1
 			// 
 			this->toolStripSeparator1->Name = L"toolStripSeparator1";
-			this->toolStripSeparator1->Size = System::Drawing::Size(249, 6);
+			this->toolStripSeparator1->Size = System::Drawing::Size(227, 6);
 			// 
-			// øàãÃðàôèêàToolStripMenuItem
+			// toolStripMenuItem1
 			// 
-			this->øàãÃðàôèêàToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->Stepper });
-			this->øàãÃðàôèêàToolStripMenuItem->Name = L"øàãÃðàôèêàToolStripMenuItem";
-			this->øàãÃðàôèêàToolStripMenuItem->Size = System::Drawing::Size(252, 26);
-			this->øàãÃðàôèêàToolStripMenuItem->Text = L"Øàã ãðàôèêà";
+			this->toolStripMenuItem1->Name = L"toolStripMenuItem1";
+			this->toolStripMenuItem1->Size = System::Drawing::Size(230, 26);
+			this->toolStripMenuItem1->Text = L"Èñòèííîå çíà÷åíèå";
 			// 
-			// Stepper
+			// labRESULTR
 			// 
-			this->Stepper->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
-			this->Stepper->Name = L"Stepper";
-			this->Stepper->Size = System::Drawing::Size(100, 27);
-			this->Stepper->Text = L"0,5";
-			this->Stepper->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MyForm::textBox_KeyPress);
-			// 
-			// labRESULT
-			// 
-			this->labRESULT->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
-			this->labRESULT->Name = L"labRESULT";
-			this->labRESULT->Size = System::Drawing::Size(100, 27);
-			this->labRESULT->Text = L"Ðåçóëüòàò";
-			this->labRESULT->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MyForm::textBox_KeyPress);
-			this->labRESULT->Click += gcnew System::EventHandler(this, &MyForm::ClearOut);
+			this->labRESULTR->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->labRESULTR->Name = L"labRESULTR";
+			this->labRESULTR->Size = System::Drawing::Size(100, 27);
+			this->labRESULTR->Text = L"Ðåçóëüòàò";
 			// 
 			// MyForm
 			// 
@@ -327,24 +260,16 @@ namespace MKWMAP {
 
 		}
 #pragma endregion
-		private: double a, b, s;
-		private: double x, y;
+
+		public: static double a, b, s, n;
+		public: static double x, y;
+		public: static int num;
 
 		private: System::Void RASCHET_Click(System::Object^ sender, System::EventArgs^ e);
-		private: System::Void OUTGraph_Click(System::Object^ sender, System::EventArgs^ e);
+		private: void OUTGraph_Click();
 		private: System::Void ClearOut(System::Object^ sender, System::EventArgs^ e);
-		private: System::Void textBox_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e);
-		private: bool MKWCHECK(System::Windows::Forms::ToolStripTextBox^);
-		private: bool MKWCHECK(System::Windows::Forms::ToolStripTextBox^, bool);
-		private: long double MKWFUNC(System::Windows::Forms::ToolStripTextBox^, long double);
-		private: long double MKWFUNC(System::Windows::Forms::ToolStripTextBox^, long double, int&);
-		private: long double MKWpow(System::Windows::Forms::ToolStripTextBox^, long double, int&);
-		private: long double MKWMAP::MyForm::MKWZP(System::Windows::Forms::ToolStripTextBox^, int&);
-		private: long double MKWMAP::MyForm::MKWQsi(System::Windows::Forms::ToolStripTextBox^, long double, long double, int&);
-		private: long double MKWMAP::MyForm::MKWSQB(System::Windows::Forms::ToolStripTextBox^, long double, int&, long double);
-		private: long double MKWMAP::MyForm::MKWIntg(System::Windows::Forms::ToolStripTextBox^, double, double, double, double);
-		private: void MKWMAP::MyForm::MKWER();
 		private: void DeffParams();
 		private: void ClearOut();
+		private: void Open_Param_Window(System::Object^ sender, System::EventArgs^ e);
 };
 }

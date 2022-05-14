@@ -2,53 +2,27 @@
 
 //Библиотека функций взаимодействия
 
-#include "MKWMAP.h"	//Библиотека с функцией вычесления интеграла и библиотекой окна
+//#include "MKWMAP.h"	//Библиотека с функцией вычесления интеграла и библиотекой окна
+
+#include "integr_math.h"
+#include "MyForm.h"
+#include "ParamLib.h"
+#include "MainPage.h"
 
 System::Void MKWMAP::MyForm::RASCHET_Click(System::Object^ sender, System::EventArgs^ e) {
+	OUTGraph_Click();
+	labRESULT1->Text = Convert::ToString(integral(a, b, num, n, 1));
+	labRESULT2->Text = Convert::ToString(integral(a, b, num, n, 2));
+	labRESULT3->Text = Convert::ToString(integral(a, b, num, n, 3));
+	labRESULTR->Text = Convert::ToString(answer(a, b, num));
+	MessageBox::Show("Расчёт окончен.", "Внимание!");
 }
 
-
-System::Void MKWMAP::MyForm::OUTGraph_Click(System::Object^ sender, System::EventArgs^ e) {
+void MKWMAP::MyForm::OUTGraph_Click() {
 
 	ClearOut();																					//Очистка экрана
-																								//Проверка на ввод функции интегрирования
-	//if (textBoxGetInt->Text == L"") {
-	//	MessageBox::Show("Вы не ввели функцию интегрирования", "Внимание!");
-	//	return;
-	//}
-	// 
-	//Проверка на ввод всех данных
 
-	if (textBoxA->Text == L"" || textBoxB->Text == L"" || Stepper->Text == L"") DeffParams();
-	else {
-		//Проверка на правильность ввода
-		if (MKWCHECK(textBoxA)) {
-			return;
-		}
-		if (MKWCHECK(textBoxB)) {
-			return;
-		}
-		//if (MKWCHECK(textBoxGetInt, 1)) {
-		//	return;
-		//}
-		if (MKWCHECK(Stepper)) {
-			return;
-		}
-		//Принятие переменных
-		s = System::Convert::ToDouble(Stepper->Text);
-		a = System::Convert::ToDouble(textBoxA->Text) + s;
-		b = System::Convert::ToDouble(textBoxB->Text) - s;
-		x = a;
-		//Проверка корректости значений
-		if (b < a) {
-			MessageBox::Show("Вы ввели некоректные значения параметров а и b.","Внимание!");
-			return;
-		}
-		if (s <= 0) {
-			MessageBox::Show("Вы ввели некоректное значение шага графика, оно должно быть больше 0.", "Внимание!");
-			return;
-		}
-	}
+	if (s == 0) DeffParams();
 
 	//Очистка графиков
 	this->chart->Series[0]->Points->Clear();
@@ -56,29 +30,21 @@ System::Void MKWMAP::MyForm::OUTGraph_Click(System::Object^ sender, System::Even
 	//Построение графиков
 
 	while (x <= b) {
-		y = x;
+		y = test_function(x, num);
 		this->chart->Series[0]->Points->AddXY(x, y);
 
 		//График обычной функции
 
-		y = Math::Cos(x);
+		y = test_function(x, num);
 		this->chart->Series[1]->Points->AddXY(x, y);
 
-		//this->progressBar1->Increment(abs((long long int)(a - b)) / s);
 		x += s;
 	}
 
-	//this->progressBar1->Increment(-100);
+	x = a;
 }
-
 
 System::Void MKWMAP::MyForm::ClearOut(System::Object^ sender, System::EventArgs^ e) {
-	ClearOut();
-}
-
-//Функция очистки экрана при изменении значений в полях
-System::Void MKWMAP::MyForm::textBox_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e)
-{
 	ClearOut();
 }
 
@@ -87,49 +53,25 @@ void MKWMAP::MyForm::DeffParams()
 {
 	MessageBox::Show("Вы не указали какой-то из параметров, поэтому будут использованы параметры по умолчанию.", "Внимание!");
 
-	a = -10;
-	b = 10;
-	x = a;
 	s = 0.1;
+	a = -10 + s;
+	b = 10 + s;
+	x = a;
 }
 
 //Функция очистки экрана
 void MKWMAP::MyForm::ClearOut()
 {
-	this->labRESULT->Text = L"Результат";
+	this->labRESULT1->Text = L"Результат";
+	this->labRESULT2->Text = L"Результат";
+	this->labRESULT3->Text = L"Результат";
 	this->chart->Series[0]->Points->Clear();
 	this->chart->Series[1]->Points->Clear();
 }
 
-//Функция проверка корректного ввода
-bool MKWMAP::MyForm::MKWCHECK(System::Windows::Forms::ToolStripTextBox^ t) {
-	for (int i = 0; i < (t->TextLength); i++)
-		if ((t->Text)[i] == L'.' || (t->Text)[i] == L'*' || (t->Text)[i] == L'/') {
-			MessageBox::Show("При вводе дробных чисел необходимо ставить запятую, а не точку.\0Могли ввести ошибочные символы.", "Внимание!");
-			return true;
-		}
-	return false;
-}
-
-//Функция проверки коректного ввода интеграла
-bool MKWMAP::MyForm::MKWCHECK(System::Windows::Forms::ToolStripTextBox^ t, bool l) {
-	const int c = 18;
-	wchar_t ch[c] = { L'0', L'1', L'2', L'3', L'4', L'5', L'6', L'7', L'8', L'9', L'+', L'-', L'*', L'/', L'^', L'(', L')', L'x' };
-
-	bool flag = false;
-
-	for (int i = 0; i < (t->TextLength); i++) {
-		for (int j = 0; j < c; j++) {
-			if ((t->Text)[i] == ch[j]) {
-				flag = true;
-				break;
-			}
-		}
-		if (!flag) {
-			MessageBox::Show("При вводе интегралла можно использовать только символы: \nот 0 до 9 , * , / , ^ , + , - , ( , ) , x .", "Внимание!");
-			return true;
-		}
-		flag = false;
-	}
-	return false;
+//Функция открытия окна параметров
+void MKWMAP::MyForm::Open_Param_Window(System::Object^ sender, System::EventArgs^ e)
+{
+	Params^ form = gcnew Params;
+	form->Show();
 }

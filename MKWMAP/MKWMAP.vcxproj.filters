@@ -13,21 +13,48 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Файлы заголовков\Интеграллы">
+      <UniqueIdentifier>{95653729-eab9-4d03-9d99-7f9f02c5596e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Диффуры">
+      <UniqueIdentifier>{4825c10b-6b70-44d2-af9f-8094ae9f0395}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MyForm.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="MainPage.cpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClCompile>
+    <ClCompile Include="DiffUr.cpp">
+      <Filter>Файлы заголовков\Диффуры</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="MKWMAP.h">
+    <ClInclude Include="Params.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="function.h">
       <Filter>Файлы ресурсов</Filter>
     </ClInclude>
-    <ClInclude Include="MKWFormLib.h">
+    <ClInclude Include="integr_math.h">
       <Filter>Файлы ресурсов</Filter>
+    </ClInclude>
+    <ClInclude Include="MainPage.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="MKWFormLib.h">
+      <Filter>Файлы заголовков\Интеграллы</Filter>
+    </ClInclude>
+    <ClInclude Include="ParamLib.h">
+      <Filter>Файлы заголовков\Интеграллы</Filter>
+    </ClInclude>
+    <ClInclude Include="DiffUr.h">
+      <Filter>Файлы заголовков\Диффуры</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
