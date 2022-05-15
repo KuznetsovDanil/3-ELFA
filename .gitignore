@@ -2,5 +2,6 @@
 .vs/
 x64/Release/Project1.pdb
 x64/Release/Project1.exe.lastcodeanalysissucceeded
+x64/Release/Project1.exe.metagen
 Debug/
 Project1/x64/
