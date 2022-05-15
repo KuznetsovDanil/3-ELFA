@@ -3,7 +3,7 @@
 class Function {
 private:
 	const int type;         // Сама функция f(x,u)
-	const double x0, y0;    // Начальные координаты
+	const double x0, u0;    // Начальные координаты
 	double x, y;            // Текущие координаты
 	const double c;         // Константа в Интеграле ДУ
 
@@ -11,7 +11,7 @@ private:
 	
 public:
 	// Конструктор
-	Function(const double x0, const double u0, const int type) : type(type), x0(x0), y0(u0), c(answer_const(x0, u0, type)) { null_coordin(); }
+	Function(const double x0, const double u0, const int type) : type(type), x0(x0), u0(u0), c(answer_const(x0, u0, type)) { null_coordin(); }
 
 	// Геттеры \\
 
@@ -23,7 +23,7 @@ public:
 
 	void set_x(double x_new) { x = x_new; }; // Устанавливает новый x
 	void set_y(double y_new) { y = y_new; }; // Устанавливает новый y
-	void null_coordin() { x = x0; y = y0; }; // Сбрасывает текущие координинаты в начальные
+	void null_coordin() { x = x0; y = u0; }; // Сбрасывает текущие координинаты в начальные
 
 	// Остальные методы
 	double function_diff()const;                                                    // Возвращает f(xn,yn)
