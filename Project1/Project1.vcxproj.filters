@@ -21,10 +21,10 @@
     <ClCompile Include="Source.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="diff_math.cpp">
+    <ClCompile Include="math\diffur.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="function.cpp">
+    <ClCompile Include="math\function.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,7 +32,10 @@
     <ClInclude Include="MyForm.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="math\diff.h">
+    <ClInclude Include="math\diffur.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="math\function.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

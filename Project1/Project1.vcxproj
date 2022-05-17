@@ -120,13 +120,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="diff_math.cpp" />
-    <ClCompile Include="function.cpp" />
+    <ClCompile Include="math\diffur.cpp" />
+    <ClCompile Include="math\function.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="math\diff.h" />
+    <ClInclude Include="math\diffur.h" />
+    <ClInclude Include="math\function.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>

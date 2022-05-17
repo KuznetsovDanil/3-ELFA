@@ -1,5 +1,5 @@
 #pragma once
-#include "math/diff.h"
+#include "math/diffur.h"
 
 namespace Project1 {
 
@@ -36,8 +36,11 @@ namespace Project1 {
 			}
 		}
 	private: System::Windows::Forms::DataVisualization::Charting::Chart^ chart;
+	protected:
+
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
+	private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
 	protected:
 
 	protected:
@@ -62,6 +65,7 @@ namespace Project1 {
 			this->chart = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -125,25 +129,13 @@ namespace Project1 {
 
 		}
 #pragma endregion
+	// Инициализация данны и запуск процесса
+	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e);
 
-	//#include "math/diff.h"
-
-
-	private: void out_dot(double, double, std::ofstream&, std::ofstream&, bool key);
-	private: void diff_methods(double x, double y, const int n, double tay, int method, int);
-	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		double x0, u0, a, b, tay;
-			int method, fun;
-			x0 = 5;
-			u0 = 34;
-			a = 0.1;
-			b = 10;
-			tay = 0.5;
-			method = 1;
-			fun = 1;
-			const int n = ceil((b - a) / tay);
-			
-			diff_methods(x0,u0,n,tay,method,fun);
-	}
-	};
+	// Вывод точки в файл и на график
+	//private: void out_dot(Function& fun, std::ofstream& out_x, std::ofstream& out_y, bool key);
+	
+	
+	//private: System::Void backgroundWorker1_DoWork(System::Object^ sender, System::ComponentModel::DoWorkEventArgs^ e);
+};
 }
