@@ -8,8 +8,9 @@ void diff_methods(Function& fun, const int n, double tay, int method){
 	case 1:
 		// Метод Эйлера (метод ломаных) \\
 
+		fun.set_y(tay * fun.function_diff()); // y = y(x_start)
 		for (int i = 0; i < n; i++) {
-			out_dot(fun, out_x, out_y);
+			fun.out_dot(out_x, out_y);
 			fun.set_y(fun.get_y() + tay * fun.function_diff());
 			fun.set_x(fun.get_x() + tay);
 		}

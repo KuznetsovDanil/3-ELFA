@@ -1,16 +1,14 @@
 #include "function.h"
-#define _USE_MATH_DEFINES
-#include <math.h> // по хорошему надо использовать cmath но с ним _USE_MATH_DEFINES не робит
+//#define _USE_MATH_DEFINES
+// #include <math.h>
+#include <corecrt_math_defines.h>
+#include <cmath>
 
-void out_dot(Function& fun, std::ofstream& out_x, std::ofstream& out_y) {
-	out_x << fun.x << "\n";
-	out_y << fun.y << "\n";
-}
-
-void out_dot(double x, double y, std::ofstream& out_x, std::ofstream& out_y){
+void Function::out_dot(std::ofstream& out_x, std::ofstream& out_y)const {
 	out_x << x << "\n";
 	out_y << y << "\n";
 }
+
 
 // Производная u' в ДУ - f(x,u)
 double Function::function_diff()const {
@@ -37,11 +35,13 @@ const double Function::answer_const(double x0, double y0, int type)const {
 	}
 }
 
+// Построение графика интеграла ДУ - u(x)
 void Function::answer_grafic(const int n, double tay) {
-	std::ofstream out_x("file_x_i.txt");
-	std::ofstream out_y("file_y_i.txt");
+	std::ofstream out_x("file_x_truth.txt");
+	std::ofstream out_y("file_y_truth.txt");
 	for (int i = 0; i < n; i++) {
-		out_dot(x, answer(), out_x, out_y);
+		set_y(answer());
+		out_dot(out_x, out_y);
 		x += tay;
 	}
 	out_x.close();

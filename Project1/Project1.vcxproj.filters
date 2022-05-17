@@ -26,10 +26,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="math\function.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="math\diffur.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="math\function.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
