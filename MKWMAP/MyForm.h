@@ -104,15 +104,15 @@ namespace MKWMAP {
 			this->chart->Location = System::Drawing::Point(0, 28);
 			this->chart->Name = L"chart";
 			series1->ChartArea = L"ChartArea1";
-			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::SplineArea;
+			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Area;
 			series1->Color = System::Drawing::Color::Gold;
 			series1->Legend = L"Legend1";
 			series1->MarkerColor = System::Drawing::Color::White;
-			series1->Name = L"Series2";
+			series1->Name = L"APROCSIMATION";
 			series2->ChartArea = L"ChartArea1";
 			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
 			series2->Legend = L"Legend1";
-			series2->Name = L"Series1";
+			series2->Name = L"FUNCTION";
 			this->chart->Series->Add(series1);
 			this->chart->Series->Add(series2);
 			this->chart->Size = System::Drawing::Size(608, 350);
