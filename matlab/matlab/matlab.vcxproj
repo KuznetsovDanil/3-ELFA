@@ -20,10 +20,10 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
-    <ProjectGuid>{003265B4-A900-42A3-89C9-ABAEB33F60F3}</ProjectGuid>
+    <ProjectGuid>{63B63681-545E-4068-AEE6-CBB0503924C5}</ProjectGuid>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
-    <RootNamespace>MKWMAP</RootNamespace>
+    <RootNamespace>matlab</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -111,6 +111,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Integral\GraphIntegr.cpp" />
+    <ClCompile Include="Integral\Params.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainPage.cpp" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -119,38 +125,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DiffUr.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="MainPage.cpp" />
+    <ClInclude Include="Integral\GraphIntegr.h" />
+    <ClInclude Include="Integral\Integral Math\function.h" />
+    <ClInclude Include="Integral\Integral Math\integr_math.h" />
+    <ClInclude Include="Integral\Params.h" />
+    <ClInclude Include="MainPage.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DiffUr.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="function.h" />
-    <ClInclude Include="integr_math.h" />
-    <ClInclude Include="MainPage.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="MKWFormLib.h" />
-    <ClInclude Include="MyForm.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-    <ClInclude Include="ParamLib.h" />
-    <ClInclude Include="Params.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="MainPage.resx">
-      <DependentUpon>MainPage.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MyForm.resx">
-      <DependentUpon>MyForm.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Params.resx">
-      <DependentUpon>Params.h</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Integral\GraphIntegr.resx" />
+    <EmbeddedResource Include="Integral\Params.resx" />
+    <EmbeddedResource Include="MainPage.resx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

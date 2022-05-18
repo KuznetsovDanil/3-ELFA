@@ -1,10 +1,7 @@
-#include "MKWFormLib.h"
-//#include "MainPage.h"
+#include "MainPage.h"
 #include <Windows.h>
-#include <string>
-#include <iostream>
 
-using namespace MKWMAP; // Название проекта
+using namespace matlab; // Название проекта
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	Application::EnableVisualStyles();

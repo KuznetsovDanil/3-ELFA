@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков\MainPage">
+      <UniqueIdentifier>{e3d4b508-9b70-4996-a7f8-4b94b0881b07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Diffur">
+      <UniqueIdentifier>{6e090de8-b673-4d3d-900a-d5f24cc42b90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Furie%28future%29">
+      <UniqueIdentifier>{c8903501-286e-4363-beaf-4ce736cf7797}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Integral">
+      <UniqueIdentifier>{415b39ad-6563-4956-aee4-6a51a3963465}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы ресурсов\Integral math">
+      <UniqueIdentifier>{5af8624a-89b8-4d0b-b5ef-7461fda5db4f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы ресурсов\Diffur math">
+      <UniqueIdentifier>{3af4695e-1253-4d12-bdd9-89816e2b854e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Integral\GraphIntegr.cpp">
+      <Filter>Файлы заголовков\Integral</Filter>
+    </ClCompile>
+    <ClCompile Include="Integral\Params.cpp">
+      <Filter>Файлы заголовков\Integral</Filter>
+    </ClCompile>
+    <ClCompile Include="MainPage.cpp">
+      <Filter>Файлы заголовков\MainPage</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Integral\GraphIntegr.h">
+      <Filter>Файлы заголовков\Integral</Filter>
+    </ClInclude>
+    <ClInclude Include="Integral\Params.h">
+      <Filter>Файлы заголовков\Integral</Filter>
+    </ClInclude>
+    <ClInclude Include="MainPage.h">
+      <Filter>Файлы заголовков\MainPage</Filter>
+    </ClInclude>
+    <ClInclude Include="Integral\Integral Math\function.h">
+      <Filter>Файлы ресурсов\Integral math</Filter>
+    </ClInclude>
+    <ClInclude Include="Integral\Integral Math\integr_math.h">
+      <Filter>Файлы ресурсов\Integral math</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Integral\GraphIntegr.resx">
+      <Filter>Файлы заголовков\Integral</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Integral\Params.resx">
+      <Filter>Файлы заголовков\Integral</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainPage.resx">
+      <Filter>Файлы заголовков\MainPage</Filter>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

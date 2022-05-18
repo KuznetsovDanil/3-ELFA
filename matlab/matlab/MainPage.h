@@ -1,9 +1,6 @@
 #pragma once
 
-#include "MyForm.h"
-#include "DiffUr.h"
-
-namespace MKWMAP {
+namespace matlab {
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -37,11 +34,9 @@ namespace MKWMAP {
 				delete components;
 			}
 		}
-
-	protected:
-
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button2;
+	protected:
 
 	private:
 		/// <summary>
@@ -62,40 +57,43 @@ namespace MKWMAP {
 			// 
 			// button1
 			// 
+			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->button1->Dock = System::Windows::Forms::DockStyle::Top;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 19.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->button1->Location = System::Drawing::Point(0, 0);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(338, 124);
-			this->button1->TabIndex = 1;
+			this->button1->Size = System::Drawing::Size(300, 150);
+			this->button1->TabIndex = 0;
 			this->button1->Text = L"Интеграллы";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MainPage::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &MainPage::Интеграллы);
 			// 
 			// button2
 			// 
-			this->button2->Dock = System::Windows::Forms::DockStyle::Top;
-			this->button2->Location = System::Drawing::Point(0, 124);
+			this->button2->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->button2->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->button2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 19.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->button2->Location = System::Drawing::Point(0, 150);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(338, 124);
-			this->button2->TabIndex = 2;
+			this->button2->Size = System::Drawing::Size(300, 150);
+			this->button2->TabIndex = 1;
 			this->button2->Text = L"Диффуры";
 			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &MainPage::button2_Click);
 			// 
 			// MainPage
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(338, 271);
+			this->ClientSize = System::Drawing::Size(300, 300);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Name = L"MainPage";
-			this->Text = L"MA Project MainPage";
+			this->Text = L"MainPage";
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Интеграллы(System::Object^ sender, System::EventArgs^ e);
 	};
 }
