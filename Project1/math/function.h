@@ -1,4 +1,3 @@
-#include <iostream>
 #include <corecrt_math_defines.h>
 #include <cmath>
 
