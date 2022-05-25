@@ -53,6 +53,7 @@ public:
 
 	double get_n()const { return n; };                               // Возвращает количество точек
 	const double get_c()const { return c; };                         // Возвращает константу c
+	double** get_mass_dots()const { return dots; };                  // Возвращает указатель на массив точек
 
 	// Остальные методы \\
 

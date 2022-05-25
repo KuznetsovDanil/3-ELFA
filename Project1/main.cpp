@@ -1,8 +1,8 @@
 #include "math/function.h"
 #include <iostream>
 
-//#define ANSWER
-#define DIFFUR
+#define ANSWER
+//#define DIFFUR
 
 int main() {
 	double x0, u0; // Координаты через которые должен проходить Интеграл ДУ
@@ -12,7 +12,7 @@ int main() {
 	int method;    // Численный метод
 
 	x0 = 5; u0 = 14;
-	a = 3.06; b = 8.03;
+	a = 3.06; b = 8.003;
 	tay = 0.05;
 	type = 0;
 	method = 0;
@@ -22,13 +22,13 @@ int main() {
 	std::cout << fun.get_c();
 
 	double** dot;
-	
+	dot = fun.get_mass_dots();
 #ifdef ANSWER
 
 
 
 	std::cout << "answer_grafic\n\n";
-	dot = fun.answer_grafic(tay); // Строим u(x) - Интеграл ДУ
+	fun.answer_grafic(tay); // Строим u(x) - Интеграл ДУ
 
 	for (int i = 0; i < fun.get_n(); i++)
 		std::cout << dot[0][i] << "\n";
