@@ -1,58 +1,55 @@
-#include "math/diffur.h"
-
+#include "math/function.h"
 #include <iostream>
-//////////////
-//Переменные//
-//////////////
-/*
-  x0, u0 - точка через которую проходит Интеграл ДУ, 
-		  так же с этой точки начинает строится график
-		  так же при помощи этой точки вы числяется значение константы в Интеграле ДУ
-  
-  a, b - интервал на котором строится интеграл ДУ и его апроксимация (пользователю удобней задать отрезок, чем количество точек)
 
-  tay - шаг между 2-мя соседними значениями x, которые перебираются при построении
+//#define ANSWER
+#define DIFFUR
 
-  method - метод вычисления приближенного Интеграла ДУ
-
-  fun - функция f(x,u) = y', сам дифур
-
-  n - количество точек, вычисляется чтобы ибавиться от b
-
-*/
 int main() {
-	double x0, u0, a, b, tay;
-	int method, type;
-	x0 = 5;
-	u0 = 34;
-	a = 0.1;
-	b = 10;
-	tay = 0.5;
-	method = 1;
-	type = 1;
-	//cout << "Введите координаты точки:\nx0 = ";
-	//cin >> x0;
-	//cout << "u0 = ";
-	//cin >> u0;
-	//cout << "Введите отрезок построения Интеграла ДУ:\na = ";
-	//cin >> a;
-	//cout << "b = ";
-	//cin >> b;
-	//cout << "Введите шаг построения: ";
-	//cin >> tay;
-	//cout << "Введите метод вычисления: ";
-	//cin >> method;
-	//cout << "Введите номер функции: ";
-	//cin >> fun;
+	double x0, u0; // Координаты через которые должен проходить Интеграл ДУ
+	double a, b;   // Промежуток на котором решается ДУ
+	double tay;    // Шаг, определяющий расстояние между 2-мя соседними точками
+	int type;      // Тип функции
+	int method;    // Численный метод
 
-	Function fun(x0, u0, type, a);
+	x0 = 5; u0 = 14;
+	a = 3.06; b = 8.03;
+	tay = 0.05;
+	type = 0;
+	method = 0;
 
-	// Вычислим кол-во точек
-	const int n = ceil((b - a) / tay);
+	Function fun(type, a, b, x0, u0); // Инициализация ДУ
 
 	std::cout << fun.get_c();
+
+	double** dot;
+	
+#ifdef ANSWER
+
+
+
+	std::cout << "answer_grafic\n\n";
+	dot = fun.answer_grafic(tay); // Строим u(x) - Интеграл ДУ
+
+	for (int i = 0; i < fun.get_n(); i++)
+		std::cout << dot[0][i] << "\n";
+
+	std::cout << "\n\n\n\n";
+
+	for (int i = 0; i < fun.get_n(); i++)
+		std::cout << dot[1][i] << "\n";
+#endif	
+#ifdef DIFFUR
+	std::cout << "diff_methods\n\n";
+	dot = fun.diff_methods(method,tay);
+
+	for (int i = 0; i < fun.get_n(); i++)
+		std::cout << dot[0][i] << "\n";
+
+	std::cout << "\n\n\n\n";
+
+	for (int i = 0; i < fun.get_n(); i++)
+		std::cout << dot[1][i] << "\n";
+#endif
 	system("pause");
-	fun.answer_grafic(n, tay); // Строим u(x) - Интеграл ДУ
-	diff_methods(fun,n,tay,method); // Строим y(x) - апроксимацию
 	return 0;
 }
