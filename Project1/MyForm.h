@@ -1,5 +1,4 @@
 #pragma once
-#include "math/diffur.h"
 
 namespace Project1 {
 
@@ -40,7 +39,7 @@ namespace Project1 {
 
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
-	private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
+
 	protected:
 
 	protected:
@@ -65,7 +64,6 @@ namespace Project1 {
 			this->chart = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -77,11 +75,11 @@ namespace Project1 {
 			legend1->Name = L"Legend1";
 			this->chart->Legends->Add(legend1);
 			this->chart->Location = System::Drawing::Point(0, 0);
-			this->chart->Margin = System::Windows::Forms::Padding(2);
+			this->chart->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->chart->Name = L"chart";
 			series1->ChartArea = L"ChartArea1";
 			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series1->Color = System::Drawing::Color::Gold;
+			series1->Color = System::Drawing::Color::Magenta;
 			series1->Legend = L"Legend1";
 			series1->MarkerColor = System::Drawing::Color::White;
 			series1->Name = L"Апроксимация";
@@ -131,11 +129,5 @@ namespace Project1 {
 #pragma endregion
 	// Инициализация данны и запуск процесса
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e);
-
-	// Вывод точки в файл и на график
-	//private: void out_dot(Function& fun, std::ofstream& out_x, std::ofstream& out_y, bool key);
-	
-	
-	//private: System::Void backgroundWorker1_DoWork(System::Object^ sender, System::ComponentModel::DoWorkEventArgs^ e);
 };
 }
