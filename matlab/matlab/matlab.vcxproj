@@ -125,16 +125,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Integral\GraphIntegr.h" />
+    <ClInclude Include="Integral\GraphIntegr.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Integral\Integral Math\function.h" />
     <ClInclude Include="Integral\Integral Math\integr_math.h" />
-    <ClInclude Include="Integral\Params.h" />
-    <ClInclude Include="MainPage.h" />
+    <ClInclude Include="Integral\Params.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MainPage.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Integral\GraphIntegr.resx" />
-    <EmbeddedResource Include="Integral\Params.resx" />
-    <EmbeddedResource Include="MainPage.resx" />
+    <EmbeddedResource Include="Integral\GraphIntegr.resx">
+      <DependentUpon>Integral\GraphIntegr.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Integral\Params.resx">
+      <DependentUpon>Integral\Params.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

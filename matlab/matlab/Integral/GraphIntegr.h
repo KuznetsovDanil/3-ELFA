@@ -69,10 +69,10 @@ namespace matlab {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Legend^ legend1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::Series^ series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^ chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Legend^ legend2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Legend());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^ series4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->ğåçóëüòàòToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -93,25 +93,25 @@ namespace matlab {
 			// 
 			// chart1
 			// 
-			chartArea1->Name = L"ChartArea1";
-			this->chart1->ChartAreas->Add(chartArea1);
+			chartArea2->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea2);
 			this->chart1->Dock = System::Windows::Forms::DockStyle::Fill;
-			legend1->Name = L"Legend1";
-			this->chart1->Legends->Add(legend1);
+			legend2->Name = L"Legend1";
+			this->chart1->Legends->Add(legend2);
 			this->chart1->Location = System::Drawing::Point(0, 28);
 			this->chart1->Name = L"chart1";
-			series1->ChartArea = L"ChartArea1";
-			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Area;
-			series1->Color = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
+			series3->ChartArea = L"ChartArea1";
+			series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Area;
+			series3->Color = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(0)));
-			series1->Legend = L"Legend1";
-			series1->Name = L"Aprocsimation";
-			series2->ChartArea = L"ChartArea1";
-			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
-			series2->Legend = L"Legend1";
-			series2->Name = L"Function";
-			this->chart1->Series->Add(series1);
-			this->chart1->Series->Add(series2);
+			series3->Legend = L"Legend1";
+			series3->Name = L"Aprocsimation";
+			series4->ChartArea = L"ChartArea1";
+			series4->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Spline;
+			series4->Legend = L"Legend1";
+			series4->Name = L"Function";
+			this->chart1->Series->Add(series3);
+			this->chart1->Series->Add(series4);
 			this->chart1->Size = System::Drawing::Size(920, 544);
 			this->chart1->TabIndex = 0;
 			this->chart1->Text = L"Graphics";
@@ -140,65 +140,73 @@ namespace matlab {
 			// ïåğâûéÑïîñîáToolStripMenuItem
 			// 
 			this->ïåğâûéÑïîñîáToolStripMenuItem->Name = L"ïåğâûéÑïîñîáToolStripMenuItem";
-			this->ïåğâûéÑïîñîáToolStripMenuItem->Size = System::Drawing::Size(230, 26);
+			this->ïåğâûéÑïîñîáToolStripMenuItem->Size = System::Drawing::Size(574, 26);
 			this->ïåğâûéÑïîñîáToolStripMenuItem->Text = L"Ïåğâûé ñïîñîá";
 			// 
 			// labRESULT1
 			// 
-			this->labRESULT1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->labRESULT1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->labRESULT1->Name = L"labRESULT1";
-			this->labRESULT1->Size = System::Drawing::Size(100, 27);
+			this->labRESULT1->ReadOnly = true;
+			this->labRESULT1->Size = System::Drawing::Size(500, 27);
+			this->labRESULT1->Text = L"Ğåçóëüòàò";
 			// 
 			// toolStripSeparator1
 			// 
 			this->toolStripSeparator1->Name = L"toolStripSeparator1";
-			this->toolStripSeparator1->Size = System::Drawing::Size(227, 6);
+			this->toolStripSeparator1->Size = System::Drawing::Size(571, 6);
 			// 
 			// âòîğîéÑïîñîáToolStripMenuItem
 			// 
 			this->âòîğîéÑïîñîáToolStripMenuItem->Name = L"âòîğîéÑïîñîáToolStripMenuItem";
-			this->âòîğîéÑïîñîáToolStripMenuItem->Size = System::Drawing::Size(230, 26);
+			this->âòîğîéÑïîñîáToolStripMenuItem->Size = System::Drawing::Size(574, 26);
 			this->âòîğîéÑïîñîáToolStripMenuItem->Text = L"Âòîğîé ñïîñîá";
 			// 
 			// labRESULT2
 			// 
-			this->labRESULT2->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->labRESULT2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->labRESULT2->Name = L"labRESULT2";
-			this->labRESULT2->Size = System::Drawing::Size(100, 27);
+			this->labRESULT2->ReadOnly = true;
+			this->labRESULT2->Size = System::Drawing::Size(500, 27);
+			this->labRESULT2->Text = L"Ğåçóëüòàò";
 			// 
 			// toolStripSeparator2
 			// 
 			this->toolStripSeparator2->Name = L"toolStripSeparator2";
-			this->toolStripSeparator2->Size = System::Drawing::Size(227, 6);
+			this->toolStripSeparator2->Size = System::Drawing::Size(571, 6);
 			// 
 			// òğåòèéÑïîñîáToolStripMenuItem
 			// 
 			this->òğåòèéÑïîñîáToolStripMenuItem->Name = L"òğåòèéÑïîñîáToolStripMenuItem";
-			this->òğåòèéÑïîñîáToolStripMenuItem->Size = System::Drawing::Size(230, 26);
+			this->òğåòèéÑïîñîáToolStripMenuItem->Size = System::Drawing::Size(574, 26);
 			this->òğåòèéÑïîñîáToolStripMenuItem->Text = L"Òğåòèé ñïîñîá";
 			// 
 			// labRESULT3
 			// 
-			this->labRESULT3->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->labRESULT3->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->labRESULT3->Name = L"labRESULT3";
-			this->labRESULT3->Size = System::Drawing::Size(100, 27);
+			this->labRESULT3->ReadOnly = true;
+			this->labRESULT3->Size = System::Drawing::Size(500, 27);
+			this->labRESULT3->Text = L"Ğåçóëüòàò";
 			// 
 			// toolStripSeparator3
 			// 
 			this->toolStripSeparator3->Name = L"toolStripSeparator3";
-			this->toolStripSeparator3->Size = System::Drawing::Size(227, 6);
+			this->toolStripSeparator3->Size = System::Drawing::Size(571, 6);
 			// 
 			// èñòèííîåÇíà÷åíèåToolStripMenuItem
 			// 
 			this->èñòèííîåÇíà÷åíèåToolStripMenuItem->Name = L"èñòèííîåÇíà÷åíèåToolStripMenuItem";
-			this->èñòèííîåÇíà÷åíèåToolStripMenuItem->Size = System::Drawing::Size(230, 26);
+			this->èñòèííîåÇíà÷åíèåToolStripMenuItem->Size = System::Drawing::Size(574, 26);
 			this->èñòèííîåÇíà÷åíèåToolStripMenuItem->Text = L"Èñòèííîå çíà÷åíèå";
 			// 
 			// labRESULTR
 			// 
-			this->labRESULTR->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
+			this->labRESULTR->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->labRESULTR->Name = L"labRESULTR";
-			this->labRESULTR->Size = System::Drawing::Size(100, 27);
+			this->labRESULTR->ReadOnly = true;
+			this->labRESULTR->Size = System::Drawing::Size(500, 27);
+			this->labRESULTR->Text = L"Ğåçóëüòàò";
 			// 
 			// GraphIntegr
 			// 

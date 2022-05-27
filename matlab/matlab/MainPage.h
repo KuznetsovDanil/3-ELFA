@@ -87,7 +87,7 @@ namespace matlab {
 			this->ClientSize = System::Drawing::Size(300, 300);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->Name = L"MainPage";
 			this->Text = L"MainPage";
 			this->ResumeLayout(false);

@@ -63,15 +63,4 @@
       <Filter>Файлы ресурсов\Integral math</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Integral\GraphIntegr.resx">
-      <Filter>Файлы заголовков\Integral</Filter>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Integral\Params.resx">
-      <Filter>Файлы заголовков\Integral</Filter>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainPage.resx">
-      <Filter>Файлы заголовков\MainPage</Filter>
-    </EmbeddedResource>
-  </ItemGroup>
 </Project>

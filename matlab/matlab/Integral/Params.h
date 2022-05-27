@@ -49,7 +49,14 @@ namespace matlab {
 	private: System::Windows::Forms::GroupBox^ groupBox5;
 	private: System::Windows::Forms::TextBox^ textBoxN;
 
+
+
+
+
 	private: System::Windows::Forms::Button^ button1;
+
+
+
 
 	private:
 		/// <summary>
@@ -88,7 +95,7 @@ namespace matlab {
 			this->groupBox1->Dock = System::Windows::Forms::DockStyle::Top;
 			this->groupBox1->Location = System::Drawing::Point(0, 0);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(282, 60);
+			this->groupBox1->Size = System::Drawing::Size(337, 60);
 			this->groupBox1->TabIndex = 0;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Параметр а";
@@ -101,7 +108,7 @@ namespace matlab {
 			this->textBoxA->Location = System::Drawing::Point(3, 18);
 			this->textBoxA->Multiline = true;
 			this->textBoxA->Name = L"textBoxA";
-			this->textBoxA->Size = System::Drawing::Size(276, 39);
+			this->textBoxA->Size = System::Drawing::Size(331, 39);
 			this->textBoxA->TabIndex = 0;
 			this->textBoxA->Text = L"-10";
 			// 
@@ -111,7 +118,7 @@ namespace matlab {
 			this->groupBox2->Dock = System::Windows::Forms::DockStyle::Top;
 			this->groupBox2->Location = System::Drawing::Point(0, 60);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(282, 60);
+			this->groupBox2->Size = System::Drawing::Size(337, 60);
 			this->groupBox2->TabIndex = 1;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Параметр b";
@@ -124,7 +131,7 @@ namespace matlab {
 			this->textBoxB->Location = System::Drawing::Point(3, 18);
 			this->textBoxB->Multiline = true;
 			this->textBoxB->Name = L"textBoxB";
-			this->textBoxB->Size = System::Drawing::Size(276, 39);
+			this->textBoxB->Size = System::Drawing::Size(331, 39);
 			this->textBoxB->TabIndex = 0;
 			this->textBoxB->Text = L"10";
 			// 
@@ -134,7 +141,7 @@ namespace matlab {
 			this->groupBox3->Dock = System::Windows::Forms::DockStyle::Top;
 			this->groupBox3->Location = System::Drawing::Point(0, 120);
 			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Size = System::Drawing::Size(282, 60);
+			this->groupBox3->Size = System::Drawing::Size(337, 60);
 			this->groupBox3->TabIndex = 2;
 			this->groupBox3->TabStop = false;
 			this->groupBox3->Text = L"Шаг построения";
@@ -147,7 +154,7 @@ namespace matlab {
 			this->Stepper->Location = System::Drawing::Point(3, 18);
 			this->Stepper->Multiline = true;
 			this->Stepper->Name = L"Stepper";
-			this->Stepper->Size = System::Drawing::Size(276, 39);
+			this->Stepper->Size = System::Drawing::Size(331, 39);
 			this->Stepper->TabIndex = 0;
 			this->Stepper->Text = L"0,01";
 			// 
@@ -157,7 +164,7 @@ namespace matlab {
 			this->groupBox4->Dock = System::Windows::Forms::DockStyle::Top;
 			this->groupBox4->Location = System::Drawing::Point(0, 180);
 			this->groupBox4->Name = L"groupBox4";
-			this->groupBox4->Size = System::Drawing::Size(282, 51);
+			this->groupBox4->Size = System::Drawing::Size(337, 51);
 			this->groupBox4->TabIndex = 3;
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Text = L"Интегралл от";
@@ -170,9 +177,9 @@ namespace matlab {
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(8) { L"1", L"2", L"3", L"4", L"5", L"6", L"7", L"8" });
 			this->comboBox1->Location = System::Drawing::Point(3, 18);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(276, 24);
+			this->comboBox1->Size = System::Drawing::Size(331, 24);
 			this->comboBox1->TabIndex = 0;
-			this->comboBox1->Text = L"5";
+			this->comboBox1->Text = L"x^2";
 			// 
 			// groupBox5
 			// 
@@ -180,7 +187,7 @@ namespace matlab {
 			this->groupBox5->Dock = System::Windows::Forms::DockStyle::Top;
 			this->groupBox5->Location = System::Drawing::Point(0, 231);
 			this->groupBox5->Name = L"groupBox5";
-			this->groupBox5->Size = System::Drawing::Size(282, 60);
+			this->groupBox5->Size = System::Drawing::Size(337, 60);
 			this->groupBox5->TabIndex = 4;
 			this->groupBox5->TabStop = false;
 			this->groupBox5->Text = L"Количество разбиений";
@@ -193,7 +200,7 @@ namespace matlab {
 			this->textBoxN->Location = System::Drawing::Point(3, 18);
 			this->textBoxN->Multiline = true;
 			this->textBoxN->Name = L"textBoxN";
-			this->textBoxN->Size = System::Drawing::Size(276, 39);
+			this->textBoxN->Size = System::Drawing::Size(331, 39);
 			this->textBoxN->TabIndex = 0;
 			this->textBoxN->Text = L"10000";
 			// 
@@ -205,7 +212,7 @@ namespace matlab {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
 			this->button1->Location = System::Drawing::Point(0, 291);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(282, 92);
+			this->button1->Size = System::Drawing::Size(337, 101);
 			this->button1->TabIndex = 5;
 			this->button1->Text = L"OK";
 			this->button1->UseVisualStyleBackColor = true;
@@ -215,7 +222,7 @@ namespace matlab {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(282, 383);
+			this->ClientSize = System::Drawing::Size(337, 392);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->groupBox5);
 			this->Controls->Add(this->groupBox4);
