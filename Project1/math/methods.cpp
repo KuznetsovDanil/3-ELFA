@@ -2,7 +2,7 @@
 
 double** const Function::euler_before(const double tay) {
     clear_data();
-    n = ceil((b - a) / tay) + 1; // Точки между a и b + сами a и b
+    n = ceil(drop_trash((b - a) / tay)) + 1; // Точки между a и b + сами a и b
     create_mass_dots();
 
     /* "Бежим" до левой границы, пока расстояние между x и a не станет меньше шага
@@ -43,7 +43,7 @@ double** const Function::euler_before(const double tay) {
 
 double** const Function::euler_after(const double tay) {
     clear_data();
-    n = ceil((b - a) / tay) + 1; // Точки между a и b + сами a и b
+    n = ceil(drop_trash((b - a) / tay)) + 1; // Точки между a и b + сами a и b
     create_mass_dots();
 
     /* "Бежим" до правой границы, пока расстояние между x и b не станет меньше шага
@@ -81,16 +81,15 @@ double** const Function::euler_after(const double tay) {
     null_coordin();
     return dots;
 }
-
+#include <iostream>
 double** const Function::euler_inside(const double tay) {
     clear_data();
-    const int n_a = ceil((x - a) / tay) + 1; // Количество шагов от нижней границы до x0 + саму точку x0
-    const int n_b = ceil((b - x) / tay);     // Количество шагов от верхней границы до x0 (+1 не делаем т.к. x0 учли в n_a)
+    const int n_a = ceil(drop_trash((x - a) / tay)) + 1; // Количество шагов от нижней границы до x0 + саму точку x0
+    const int n_b = ceil(drop_trash((b - x) / tay));     // Количество шагов от верхней границы до x0 (+1 не делаем т.к. x0 учли в n_a)
     n = n_a + n_b;                           // Считаем общее количество точек
     create_mass_dots();
-
     write_coordin(n_a - 1);                  // Записываем координаты x0
-
+    std::cout << n_a << "\t" << n_b << "\t" << n << "\n";
     /* Высчитываем точки в направлении от x0 к a
                         (после выполнения цикла очевидно, что x всегда будет СЛЕВА от b,
                                             т.к. мы останавливаемся на 1-й (второй) точке, а она всегда СПРАВА от a) */

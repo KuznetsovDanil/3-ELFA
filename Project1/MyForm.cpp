@@ -1,7 +1,7 @@
 #include "MyForm.h"
 #include "math/function.h"
 #define ANSWER
-//#define DIFFUR
+#define DIFFUR
 
 System::Void Project1::MyForm::MyForm_Load(System::Object^ sender, System::EventArgs^ e){
 	double x0, u0; // Координаты через которые должен проходить Интеграл ДУ
@@ -10,9 +10,9 @@ System::Void Project1::MyForm::MyForm_Load(System::Object^ sender, System::Event
 	int type;      // Тип функции
 	int method;    // Численный метод
 
-	x0 = 7; u0 = 7;
-	a = 6.45; b = 87.003;
-	tay = 0.05;
+	x0 = 28; u0 = 35;
+	a = 0.45; b = 28.504;
+	tay = 0.03;
 	type = 0;
 	method = 0;
 	Function fun(type, a, b, x0, u0); // Инициализация ДУ
