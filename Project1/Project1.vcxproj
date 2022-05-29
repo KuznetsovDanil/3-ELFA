@@ -142,9 +142,11 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="math\function.cpp" />
     <ClCompile Include="math\methods.cpp" />
+    <ClCompile Include="math\other.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="math\function.h" />
+    <ClInclude Include="math\other.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

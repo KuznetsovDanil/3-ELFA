@@ -2,7 +2,7 @@
 #include <iostream>
 
 #define ANSWER
-//#define DIFFUR
+#define DIFFUR
 
 int main() {
 	double x0, u0; // Координаты через которые должен проходить Интеграл ДУ
@@ -11,9 +11,9 @@ int main() {
 	int type;      // Тип функции
 	int method;    // Численный метод
 
-	x0 = 5; u0 = 14;
-	a = 3.06; b = 8.003;
-	tay = 0.05;
+	x0 = 9.45; u0 = 5.456;
+	a = 1; b = 17.007;
+	tay = 0.003;
 	type = 0;
 	method = 0;
 
@@ -23,32 +23,30 @@ int main() {
 
 	double** dot;
 	dot = fun.get_mass_dots();
+
 #ifdef ANSWER
-
-
-
 	std::cout << "answer_grafic\n\n";
 	fun.answer_grafic(tay); // Строим u(x) - Интеграл ДУ
 
 	for (int i = 0; i < fun.get_n(); i++)
 		std::cout << dot[0][i] << "\n";
+	std::cout << "\n\n";
+	for (int i = 0; i < fun.get_n(); i++)
+		std::cout << dot[1][i] << "\n";
 
 	std::cout << "\n\n\n\n";
 
-	for (int i = 0; i < fun.get_n(); i++)
-		std::cout << dot[1][i] << "\n";
 #endif	
 #ifdef DIFFUR
 	std::cout << "diff_methods\n\n";
-	dot = fun.diff_methods(method,tay);
+	fun.diff_methods(method,tay);
 
 	for (int i = 0; i < fun.get_n(); i++)
 		std::cout << dot[0][i] << "\n";
-
-	std::cout << "\n\n\n\n";
-
+	std::cout << "\n\n";
 	for (int i = 0; i < fun.get_n(); i++)
 		std::cout << dot[1][i] << "\n";
+	std::cout << "\n\n\n\n";
 #endif
 	system("pause");
 	return 0;

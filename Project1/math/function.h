@@ -1,6 +1,6 @@
 #include <corecrt_math_defines.h>
 #include <cmath>
-
+#include "other.h"
 class Function {
 private:
 	const int type;                // Сама функция-диффур f(x,u)
@@ -15,7 +15,7 @@ private:
 
 	// Сеттеры \\
 
-	void null_coordin() { x = x0; y = u0; };                        // Сбрасывает текущие координинаты в начальные
+	void null_coordin() { x = x0; y = u0; };                                                     // Сбрасывает текущие координинаты в начальные
 	void write_coordin(int i) { dots[0][i] = x; dots[1][i] = y; };  // Записывает i-ую точку в массив
 
 	// Остальные методы \\
@@ -38,7 +38,7 @@ private:
 	double** const euler_inside(const double tay);
 
 public:
-
+	//int g(double arg); // Вычисляет порядок арумента (функция не отностится к классу, стоит ее вынести в отдельную от класса функцию)
 	// Конструктор и деструктор \\
 
 	Function(int type, double a, double b, double x0, double u0) :
