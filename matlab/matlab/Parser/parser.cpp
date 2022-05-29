@@ -13,6 +13,125 @@ parser::parser()
 {
 }
 
+long double parser::PARS(std::string inLine, long double x, long double  y)
+{
+    std::string outLine;
+    const int Length = inLine.length();
+    char* Line = new char[Length];
+    std::string func, argv;
+    for (int i = 0; i < Length; i++) { Line[i] = inLine[i]; }
+    for (int i = 0; i < Length;) {
+        if (*Line == 's' ||
+            *Line == 'c' ||
+            *Line == 't') {
+
+                {
+                    while (*Line != '(') {
+                        func += *Line;
+                        ++Line; i++;
+                    }
+                    ++Line; i++;
+                    while (*Line != ')') {
+                        argv += *Line;
+                        ++Line; i++;
+                    }
+                    ++Line; i++;
+                }
+
+                char* CHargv = new char[argv.length() + 1];
+                CHargv[argv.length()] = '\0';
+
+                for (int j = 0; j < argv.length(); j++) { CHargv[j] = argv[j]; }
+
+                if (func == "sin")     outLine += std::to_string(sin(pars(CHargv)));
+                else if (func == "cos")     outLine += std::to_string(cos(pars(CHargv)));
+                else if (func == "tg")      outLine += std::to_string(tan(pars(CHargv)));
+                else if (func == "ctg")     outLine += std::to_string(atan(pars(CHargv)));
+                else {/**/ }
+
+                delete[] CHargv;
+        }
+        else if (*Line == 'l') {
+            while (*Line != '(') {
+                func += *Line;
+                ++Line; i++;
+            }
+            ++Line; i++;
+
+            {
+                while (*Line != '(') {
+                    func += *Line;
+                    ++Line; i++;
+                }
+                ++Line; i++;
+                while (*Line != ')') {
+                    argv += *Line;
+                    ++Line; i++;
+                }
+                ++Line; i++;
+            }
+
+            char* CHargv = new char[argv.length() + 1];
+            CHargv[argv.length()] = '\0';
+
+            for (int j = 0; j < argv.length(); j++) { CHargv[j] = argv[j]; }
+
+            if (func == "log") {
+
+                std::string argv2;
+
+                {
+                    while (*Line != '(') {
+                        func += *Line;
+                        ++Line; i++;
+                    }
+                    ++Line; i++;
+                    while (*Line != ')') {
+                        argv2 += *Line;
+                        ++Line; i++;
+                    }
+                    ++Line; i++;
+                }
+
+                char* CHargv2 = new char[argv2.length() + 1];
+                CHargv2[argv2.length()] = '\0';
+
+                for (int j = 0; j < argv2.length(); j++) { CHargv2[j] = argv2[j]; }
+
+                outLine += std::to_string(log(pars(CHargv2)) / log(pars(CHargv)));
+
+
+                delete[] CHargv2;
+                delete[] CHargv;
+            }
+            else if (func == "ln")      outLine += std::to_string(log(pars(CHargv)));
+            else {/**/ }
+
+            delete[] CHargv;
+
+        }
+        else if (*Line == 'x') { while (*Line == 'x') { outLine += std::to_string(x); ++Line; i++; } }
+        else if (*Line == 'y') { while (*Line == 'y') { outLine += std::to_string(y); ++Line; i++; } }
+        else if (*Line == 'e') {
+            while (*Line == 'e') { outLine += std::to_string(M_E); ++Line; i++; }
+        }
+        else if (*Line == 'p') { while (*Line != 'i') { ++Line; i++; } outLine += std::to_string(M_PI); ++Line; i++; }
+        else {
+            outLine += *Line;
+            ++Line; i++;
+        }
+        func = "";
+        argv = "";
+    }
+    std::cout << outLine << std::endl;//\\//\\//\\//\\
+
+    char* out = new char[outLine.length() + 1];
+    for (int i = 0; i < outLine.length(); i++) { out[i] = outLine[i]; }
+    out[outLine.length()] = '\0';
+
+    return pars(out);
+}
+
 long double parser::PARS(std::string inLine, long double x)
 {
     std::string outLine;
