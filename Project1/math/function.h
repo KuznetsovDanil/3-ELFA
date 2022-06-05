@@ -11,34 +11,35 @@ private:
 	const double c;                // Константа в Интеграле ДУ
 	double x, y;                   // Текущие координаты
 	double** const dots;           // Массив из точек
-	enum Methods { EULER };        // Список численных методов
+	enum Methods                   // Список численных методов
+	{ EULER, PREDICTOR_CORRECTOR, RUNGE_KUTT_3, RUNGE_KUTT_4};
 
 	// Сеттеры \\
 
-	void null_coordin() { x = x0; y = u0; };                                                     // Сбрасывает текущие координинаты в начальные
+	void null_coordin() { x = x0; y = u0; };                        // Сбрасывает текущие координинаты в начальные
 	void write_coordin(int i) { dots[0][i] = drop_trash(x); dots[1][i] = y; };  // Записывает i-ую точку в массив
 
 	// Остальные методы \\
 
-	double function_diff()const;                                     // Возвращает f(xn,yn)
-	double answer()const;                                            // Возвращает u(xn)
-	const double answer_const()const;                                // Метод вычисления константы
+	double function_diff(const double x, const double y)const;  // Возвращает f(xn,yn)
+	double answer()const;                                       // Возвращает u(xn)
+	const double answer_const()const;                           // Метод вычисления константы
 
-	void create_mass_dots()                                          // Выделяет память под n элементов
+	void create_mass_dots()                                     // Выделяет память под n элементов
 	{dots[0] = new double[n]; dots[1] = new double[n];};
 
 	////////////////////
 	//Численные методы//
 	////////////////////
 
-	// Метод Эйлера \\
-
-	double** const euler_before(const double tay);
-	double** const euler_after(const double tay);
-	double** const euler_inside(const double tay);
+	double next_y(const double tay, const int method)const;    /* Формула приращения y без умножения на шаг, 
+															                  выбираемая в зависимости от численного метода выбранного пользователем */
+	double** const before(const double tay, const int method); // Точка до промежутка построения
+	double** const after(const double tay, const int method);  // Точка после промежутка построения
+	double** const inside(const double tay, const int method); // Точка внутри промежутка построения
 
 public:
-	//int g(double arg); // Вычисляет порядок арумента (функция не отностится к классу, стоит ее вынести в отдельную от класса функцию)
+
 	// Конструктор и деструктор \\
 
 	Function(int type, double a, double b, double x0, double u0) :
