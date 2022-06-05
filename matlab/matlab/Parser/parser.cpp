@@ -32,7 +32,15 @@ long double parser::PARS(std::string inLine, long double x, long double  y)
                     }
                     ++Line; i++;
                     while (*Line != ')') {
-                        argv += *Line;
+                        if (*Line == 'x'){
+                            argv += std::to_string(x);
+                        }
+                        else if (*Line == 'y') {
+                            argv += std::to_string(y);
+                        }
+                        else {
+                            argv += *Line;
+                        }
                         ++Line; i++;
                     }
                     ++Line; i++;
@@ -43,10 +51,10 @@ long double parser::PARS(std::string inLine, long double x, long double  y)
 
                 for (int j = 0; j < argv.length(); j++) { CHargv[j] = argv[j]; }
 
-                if (func == "sin")     outLine += std::to_string(sin(pars(CHargv)));
+                if (func == "sin")          outLine += std::to_string(sin(pars(CHargv)));
                 else if (func == "cos")     outLine += std::to_string(cos(pars(CHargv)));
                 else if (func == "tg")      outLine += std::to_string(tan(pars(CHargv)));
-                else if (func == "ctg")     outLine += std::to_string(atan(pars(CHargv)));
+                else if (func == "ctg")     outLine += std::to_string(pow(tan(pars(CHargv)),-1));
                 else {/**/ }
 
                 delete[] CHargv;
@@ -65,7 +73,15 @@ long double parser::PARS(std::string inLine, long double x, long double  y)
                 }
                 ++Line; i++;
                 while (*Line != ')') {
-                    argv += *Line;
+                    if (*Line == 'x') {
+                        argv += std::to_string(x);
+                    }
+                    else if (*Line == 'y') {
+                        argv += std::to_string(y);
+                    }
+                    else {
+                        argv += *Line;
+                    }
                     ++Line; i++;
                 }
                 ++Line; i++;
@@ -87,7 +103,15 @@ long double parser::PARS(std::string inLine, long double x, long double  y)
                     }
                     ++Line; i++;
                     while (*Line != ')') {
-                        argv2 += *Line;
+                        if (*Line == 'x') {
+                            argv2 += std::to_string(x);
+                        }
+                        else if (*Line == 'y') {
+                            argv += std::to_string(y);
+                        }
+                        else {
+                            argv2 += *Line;
+                        }
                         ++Line; i++;
                     }
                     ++Line; i++;
@@ -151,7 +175,12 @@ long double parser::PARS(std::string inLine, long double x)
                 }
                 ++Line; i++;
                 while (*Line != ')') {
-                    argv += *Line;
+                    if (*Line == 'x') {
+                        argv += std::to_string(x);
+                    }
+                    else{
+                        argv += *Line;
+                    }
                     ++Line; i++;
                 }
                 ++Line; i++;
