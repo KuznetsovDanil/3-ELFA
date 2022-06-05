@@ -1,7 +1,7 @@
 #include "function.h"
 
 // Производная u' в ДУ - f(x,u)
-double Function::function_diff()const {
+double Function::function_diff(const double x, const double y)const {
     switch (type) {
     case 0: return (-x*x-x*y+y)/x; break;
     case 1: break;// ...
@@ -43,7 +43,7 @@ double**const Function::answer_grafic(const double tay) {
     }
 
     // Рассчитываем точку на границе b 
-    x = b; /*// Если мы не дошли до границы b, то встаем на границу */
+    x = b; // Если мы не дошли до границы b, то встаем на границу 
     y = answer();
     write_coordin(n - 1);
 
@@ -53,18 +53,7 @@ double**const Function::answer_grafic(const double tay) {
 }
 
 double** const Function::diff_methods(const int method, const double tay) {
-    switch (method)
-    {
-    case EULER:
-        //////////////////////////////////
-        // Метод Эйлера (метод ломаных) //
-        //////////////////////////////////
-
-        if (x < a)      return euler_before(tay);
-        else if (x > b) return euler_after(tay);
-        else            return euler_inside(tay);
-        break;
-    default: return nullptr;
-    }
-
+        if (x < a)      return before(tay, method);
+        else if (x > b) return after(tay, method);
+        else            return inside(tay, method);
 }
