@@ -1,5 +1,5 @@
 #include "MyForm.h"
-#include "math/function.h"
+#include "math_diffur/function.h"
 #define ANSWER
 #define DIFFUR
 
@@ -15,7 +15,7 @@ System::Void Project1::MyForm::MyForm_Load(System::Object^ sender, System::Event
 	tay = 0.03;
 	type = 0;
 	method = 0;
-	Function fun(type, a, b, x0, u0); // Инициализация ДУ
+	Diffur::Function fun(type, a, b, x0, u0); // Инициализация ДУ
 
 	label2->Text = Convert::ToString(fun.get_c());
 

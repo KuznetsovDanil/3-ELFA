@@ -1,6 +1,6 @@
 #include "function.h"
 
-double Function::next_y(const double tay, const int method)const {
+double Diffur::Function::next_y(const double tay, const int method)const {
     switch (method)
     {
     case EULER:
@@ -34,7 +34,7 @@ double Function::next_y(const double tay, const int method)const {
     }
 }
 
-double** const Function::before(const double tay, const int method) {
+double** const Diffur::Function::before(const double tay, const int method) {
     clear_data();
     n = ceil(drop_trash((b - a) / tay)) + 1; // Точки между a и b + сами a и b
     create_mass_dots();
@@ -75,7 +75,7 @@ double** const Function::before(const double tay, const int method) {
     return dots;
 }
 
-double** const Function::after(const double tay, const int method) {
+double** const Diffur::Function::after(const double tay, const int method) {
     clear_data();
     n = ceil(drop_trash((b - a) / tay)) + 1; // Точки между a и b + сами a и b
     create_mass_dots();
@@ -116,7 +116,7 @@ double** const Function::after(const double tay, const int method) {
     return dots;
 }
 
-double** const Function::inside(const double tay, const int method) {
+double** const Diffur::Function::inside(const double tay, const int method) {
     clear_data();
     const int n_a = ceil(drop_trash((x - a) / tay)) + 1; // Количество шагов от нижней границы до x0 + саму точку x0
     const int n_b = ceil(drop_trash((b - x) / tay));     // Количество шагов от верхней границы до x0 (+1 не делаем т.к. x0 учли в n_a)
