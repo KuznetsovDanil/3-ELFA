@@ -1,57 +1,12 @@
-#include "integr_math.h"
-#include "function.h"
+#include "MyForm.h"
+#include <Windows.h>
+#include <string>
 
-////////////////////
-//Для тестировщика//
-////////////////////
-/*
+using namespace Project1;
 
-#define M_E        2.71828182845904523536   // e
-#define M_LOG2E    1.44269504088896340736   // log2(e)
-#define M_LOG10E   0.434294481903251827651  // log10(e)
-#define M_LN2      0.693147180559945309417  // ln(2)
-#define M_LN10     2.30258509299404568402   // ln(10)
-#define M_PI       3.14159265358979323846   // pi
-#define M_PI_2     1.57079632679489661923   // pi/2
-#define M_PI_4     0.785398163397448309616  // pi/4
-#define M_1_PI     0.318309886183790671538  // 1/pi
-#define M_2_PI     0.636619772367581343076  // 2/pi
-#define M_2_SQRTPI 1.12837916709551257390   // 2/sqrt(pi)
-#define M_SQRT2    1.41421356237309504880   // sqrt(2)
-#define M_SQRT1_2  0.707106781186547524401  // 1/sqrt(2)
-
-*/
-
-//////////////
-//Переменные//
-//////////////
-/*
-
-a,b - границы интегрирования
-n - количество разбиений
-step - т.к. значение интеграла от разбиения не зависит возьмем одинаковое, step = dx
-c - номер функции
-res - переменная для вычисления интеграла
-
-*/
-
-
-int main() {
-	setlocale(0, "");
-	double a, b;
-	int n, c, method;
-	cout << "Нижняя граница: ";
-	cin >> a;
-	cout << "Верхняя граница: ";
-	cin >> b;
-	cout << "Номер функции: ";
-	cin >> c;
-	cout << "Количество разбиений: ";
-	cin >> n;
-	cout << "Метод интегрирования: ";
-	cin >> method;
-	cout << "Результат: " << integral(a, b, c, n, method) << "\n" << "Истинный ответ: " << answer(a, b, c) << "\n";
-	system("pause");
+int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
+	Application::EnableVisualStyles();
+	Application::SetCompatibleTextRenderingDefault(false);
+	Application::Run(gcnew MyForm);
 	return 0;
 }
-// abs(i-(a+(2*n-1)/2*step)) > 0.0000001
