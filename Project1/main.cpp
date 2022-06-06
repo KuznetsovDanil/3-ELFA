@@ -1,4 +1,4 @@
-#include "math/function.h"
+#include "math_diffur/function.h"
 #include <iostream>
 
 #define ANSWER
@@ -17,7 +17,7 @@ int main() {
 	type = 0;
 	method = 0;
 
-	Function fun(type, a, b, x0, u0); // Инициализация ДУ
+	Diffur::Function fun(type, a, b, x0, u0); // Инициализация ДУ
 
 	std::cout << fun.get_c();
 

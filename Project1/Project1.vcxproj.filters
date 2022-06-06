@@ -18,21 +18,21 @@
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="math\function.cpp">
+    <ClCompile Include="math_diffur\function.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="math\methods.cpp">
+    <ClCompile Include="math_diffur\methods.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="math\other.cpp">
+    <ClCompile Include="math_diffur\other.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="math\function.h">
+    <ClInclude Include="math_diffur\function.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="math\other.h">
+    <ClInclude Include="math_diffur\other.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

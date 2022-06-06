@@ -1,7 +1,7 @@
 #include "function.h"
 
 // Производная u' в ДУ - f(x,u)
-double Function::function_diff(const double x, const double y)const {
+double Diffur::Function::function_diff(const double x, const double y)const {
     switch (type) {
     case 0: return (-x*x-x*y+y)/x; break;
     case 1: break;// ...
@@ -10,7 +10,7 @@ double Function::function_diff(const double x, const double y)const {
 
 
 // Интеграл ДУ - u(x)
-double Function::answer()const {
+double Diffur::Function::answer()const {
     switch (type) {
     case 0: return c * pow(M_E, -x) * x - x; break;
     case 1: break; // ...
@@ -18,7 +18,7 @@ double Function::answer()const {
 }
 
 // Константа Интеграла ДУ - c
-const double Function::answer_const()const {
+const double Diffur::Function::answer_const()const {
     switch (type) {
     case 0: return (u0 + x0) / (pow(M_E, -x0) * x0); break;
     case 1: break; // ...
@@ -26,7 +26,7 @@ const double Function::answer_const()const {
 }
 
 // Вычисление точек интеграла ДУ - u(x)
-double**const Function::answer_grafic(const double tay) {
+double**const Diffur::Function::answer_grafic(const double tay) {
     n = ceil(drop_trash((b - a) / tay)) + 1; // Точки между a и b + сами a и b
     create_mass_dots();
 
@@ -52,7 +52,7 @@ double**const Function::answer_grafic(const double tay) {
     return dots;
 }
 
-double** const Function::diff_methods(const int method, const double tay) {
+double** const Diffur::Function::diff_methods(const int method, const double tay) {
         if (x < a)      return before(tay, method);
         else if (x > b) return after(tay, method);
         else            return inside(tay, method);
