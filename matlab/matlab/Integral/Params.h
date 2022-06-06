@@ -47,9 +47,17 @@ namespace matlab {
 	private: System::Windows::Forms::GroupBox^ groupBox4;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 	private: System::Windows::Forms::GroupBox^ groupBox5;
-	private: System::Windows::Forms::TextBox^ textBoxN;
+
+
+
+	private: System::Windows::Forms::ComboBox^ comboBox2;
+	private: System::Windows::Forms::GroupBox^ groupBox6;
+	private: System::Windows::Forms::ComboBox^ methodBox;
+
 
 	private: System::Windows::Forms::Button^ button1;
+
+
 
 	private:
 		/// <summary>
@@ -73,13 +81,16 @@ namespace matlab {
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
-			this->textBoxN = (gcnew System::Windows::Forms::TextBox());
+			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
+			this->groupBox6 = (gcnew System::Windows::Forms::GroupBox());
+			this->methodBox = (gcnew System::Windows::Forms::ComboBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			this->groupBox3->SuspendLayout();
 			this->groupBox4->SuspendLayout();
 			this->groupBox5->SuspendLayout();
+			this->groupBox6->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// groupBox1
@@ -167,35 +178,67 @@ namespace matlab {
 			this->comboBox1->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->comboBox1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(8) { L"1", L"2", L"3", L"4", L"5", L"6", L"7", L"8" });
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
+				L"(2*x+1)*e^(-x)", L"sin(x)+cos(x)", L"x^4-x^2+4",
+					L"(2*x^3+1)^4*x^2", L"(1 + sin(x))^3*cos(x)*x", L"(x+3)/(x^2-5*x+6)", L"3/x^2", L"x^2*ln(x)"
+			});
 			this->comboBox1->Location = System::Drawing::Point(3, 18);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(276, 24);
 			this->comboBox1->TabIndex = 0;
-			this->comboBox1->Text = L"5";
+			this->comboBox1->Text = L"sin(x)";
 			// 
 			// groupBox5
 			// 
-			this->groupBox5->Controls->Add(this->textBoxN);
+			this->groupBox5->Controls->Add(this->comboBox2);
 			this->groupBox5->Dock = System::Windows::Forms::DockStyle::Top;
 			this->groupBox5->Location = System::Drawing::Point(0, 231);
 			this->groupBox5->Name = L"groupBox5";
-			this->groupBox5->Size = System::Drawing::Size(282, 60);
+			this->groupBox5->Size = System::Drawing::Size(282, 48);
 			this->groupBox5->TabIndex = 4;
 			this->groupBox5->TabStop = false;
-			this->groupBox5->Text = L"Количество разбиений";
+			this->groupBox5->Text = L"Проинтегрированная функция";
 			// 
-			// textBoxN
+			// comboBox2
 			// 
-			this->textBoxN->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->textBoxN->Font = (gcnew System::Drawing::Font(L"Times New Roman", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->comboBox2->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->comboBox2->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->comboBox2->FormattingEnabled = true;
+			this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
+				L"-(2*b+3)*e^(-b)-(-(2*a+3)*e^(-a))", L"(-cos(b)+sin(b))-(-cos(a)+sin(a))",
+					L"b^5/5-b^3/3+4*b-(a^5/5-a^3/3+4*a)", L"((2*b^3 + 1)^5)-((2 * a^3+1)^5)", L"(((1+sin(b))^4)/4)-(((1+sin(a))^4)/4)", L"-5/(b-2)+6/(b-3)-(-5/(a-2)+6/(a-3))",
+					L"-3/b-(-3/a)", L"(b^3)/3*ln(b)-(b^3)/9-(a^3)/3*ln(a)-(a^3)/9"
+			});
+			this->comboBox2->Location = System::Drawing::Point(3, 18);
+			this->comboBox2->Name = L"comboBox2";
+			this->comboBox2->Size = System::Drawing::Size(276, 24);
+			this->comboBox2->TabIndex = 1;
+			this->comboBox2->Text = L"-cos(b)+cos(a)";
+			// 
+			// groupBox6
+			// 
+			this->groupBox6->Controls->Add(this->methodBox);
+			this->groupBox6->Dock = System::Windows::Forms::DockStyle::Top;
+			this->groupBox6->Location = System::Drawing::Point(0, 279);
+			this->groupBox6->Name = L"groupBox6";
+			this->groupBox6->Size = System::Drawing::Size(282, 52);
+			this->groupBox6->TabIndex = 6;
+			this->groupBox6->TabStop = false;
+			this->groupBox6->Text = L"График метода";
+			// 
+			// methodBox
+			// 
+			this->methodBox->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->methodBox->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->methodBox->Font = (gcnew System::Drawing::Font(L"Verdana", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->textBoxN->Location = System::Drawing::Point(3, 18);
-			this->textBoxN->Multiline = true;
-			this->textBoxN->Name = L"textBoxN";
-			this->textBoxN->Size = System::Drawing::Size(276, 39);
-			this->textBoxN->TabIndex = 0;
-			this->textBoxN->Text = L"10000";
+			this->methodBox->FormattingEnabled = true;
+			this->methodBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"1", L"2", L"3" });
+			this->methodBox->Location = System::Drawing::Point(3, 18);
+			this->methodBox->Name = L"methodBox";
+			this->methodBox->Size = System::Drawing::Size(276, 30);
+			this->methodBox->TabIndex = 0;
+			this->methodBox->Text = L"1";
 			// 
 			// button1
 			// 
@@ -203,10 +246,10 @@ namespace matlab {
 			this->button1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 16.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->button1->Location = System::Drawing::Point(0, 291);
+			this->button1->Location = System::Drawing::Point(0, 331);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(282, 92);
-			this->button1->TabIndex = 5;
+			this->button1->Size = System::Drawing::Size(282, 82);
+			this->button1->TabIndex = 7;
 			this->button1->Text = L"OK";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Params::OK);
@@ -215,8 +258,9 @@ namespace matlab {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(282, 383);
+			this->ClientSize = System::Drawing::Size(282, 413);
 			this->Controls->Add(this->button1);
+			this->Controls->Add(this->groupBox6);
 			this->Controls->Add(this->groupBox5);
 			this->Controls->Add(this->groupBox4);
 			this->Controls->Add(this->groupBox3);
@@ -225,6 +269,7 @@ namespace matlab {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->Name = L"Params";
 			this->Text = L"Params";
+			this->Enter += gcnew System::EventHandler(this, &Params::OK);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->groupBox2->ResumeLayout(false);
@@ -233,7 +278,7 @@ namespace matlab {
 			this->groupBox3->PerformLayout();
 			this->groupBox4->ResumeLayout(false);
 			this->groupBox5->ResumeLayout(false);
-			this->groupBox5->PerformLayout();
+			this->groupBox6->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -241,10 +286,11 @@ namespace matlab {
 
 	private: System::Void OK(System::Object^, System::EventArgs^);
 	private: bool MKWCHECK(System::Windows::Forms::TextBox^);
+	private: bool MKWCHECK(System::Windows::Forms::ComboBox^);
 	private: bool Check(System::Windows::Forms::TextBox^,
 						System::Windows::Forms::TextBox^,
 						System::Windows::Forms::TextBox^,
-						System::Windows::Forms::TextBox^,
-						double&, double&, double&, double&);
+						System::Windows::Forms::ComboBox^,
+						double&, int&, double&, double&);
 };
 }

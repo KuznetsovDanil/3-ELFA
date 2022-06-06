@@ -140,8 +140,8 @@ namespace matlab {
 			// первыйСпособToolStripMenuItem
 			// 
 			this->первыйСпособToolStripMenuItem->Name = L"первыйСпособToolStripMenuItem";
-			this->первыйСпособToolStripMenuItem->Size = System::Drawing::Size(230, 26);
-			this->первыйСпособToolStripMenuItem->Text = L"Первый способ";
+			this->первыйСпособToolStripMenuItem->Size = System::Drawing::Size(312, 26);
+			this->первыйСпособToolStripMenuItem->Text = L"Результат метода";
 			// 
 			// labRESULT1
 			// 
@@ -152,13 +152,13 @@ namespace matlab {
 			// toolStripSeparator1
 			// 
 			this->toolStripSeparator1->Name = L"toolStripSeparator1";
-			this->toolStripSeparator1->Size = System::Drawing::Size(227, 6);
+			this->toolStripSeparator1->Size = System::Drawing::Size(309, 6);
 			// 
 			// второйСпособToolStripMenuItem
 			// 
 			this->второйСпособToolStripMenuItem->Name = L"второйСпособToolStripMenuItem";
-			this->второйСпособToolStripMenuItem->Size = System::Drawing::Size(230, 26);
-			this->второйСпособToolStripMenuItem->Text = L"Второй способ";
+			this->второйСпособToolStripMenuItem->Size = System::Drawing::Size(312, 26);
+			this->второйСпособToolStripMenuItem->Text = L"Погрешность по правилу Рунге";
 			// 
 			// labRESULT2
 			// 
@@ -169,13 +169,13 @@ namespace matlab {
 			// toolStripSeparator2
 			// 
 			this->toolStripSeparator2->Name = L"toolStripSeparator2";
-			this->toolStripSeparator2->Size = System::Drawing::Size(227, 6);
+			this->toolStripSeparator2->Size = System::Drawing::Size(309, 6);
 			// 
 			// третийСпособToolStripMenuItem
 			// 
 			this->третийСпособToolStripMenuItem->Name = L"третийСпособToolStripMenuItem";
-			this->третийСпособToolStripMenuItem->Size = System::Drawing::Size(230, 26);
-			this->третийСпособToolStripMenuItem->Text = L"Третий способ";
+			this->третийСпособToolStripMenuItem->Size = System::Drawing::Size(312, 26);
+			this->третийСпособToolStripMenuItem->Text = L"Истинное отклонение";
 			// 
 			// labRESULT3
 			// 
@@ -186,12 +186,12 @@ namespace matlab {
 			// toolStripSeparator3
 			// 
 			this->toolStripSeparator3->Name = L"toolStripSeparator3";
-			this->toolStripSeparator3->Size = System::Drawing::Size(227, 6);
+			this->toolStripSeparator3->Size = System::Drawing::Size(309, 6);
 			// 
 			// истинноеЗначениеToolStripMenuItem
 			// 
 			this->истинноеЗначениеToolStripMenuItem->Name = L"истинноеЗначениеToolStripMenuItem";
-			this->истинноеЗначениеToolStripMenuItem->Size = System::Drawing::Size(230, 26);
+			this->истинноеЗначениеToolStripMenuItem->Size = System::Drawing::Size(312, 26);
 			this->истинноеЗначениеToolStripMenuItem->Text = L"Истинное значение";
 			// 
 			// labRESULTR
@@ -224,6 +224,7 @@ namespace matlab {
 		//public: double x, y;
 		//public: int num;
 
-		public: System::Void Расчёт(System::Object^, System::EventArgs^, double, double, double, double, double);
+//		public: System::Void Расчёт(System::Object^, System::EventArgs^, double, double, double, double, double);
+		public: System::Void matlab::GraphIntegr::Расчёт(System::Object^, System::EventArgs^, double, double, double, String^, String^, int);
 };
 }

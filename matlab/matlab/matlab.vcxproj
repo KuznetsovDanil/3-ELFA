@@ -112,6 +112,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Integral\GraphIntegr.cpp" />
+    <ClCompile Include="Integral\math_integral\function.cpp" />
+    <ClCompile Include="Integral\math_integral\methods.cpp" />
+    <ClCompile Include="Integral\math_integral\other.cpp" />
+    <ClCompile Include="Integral\math_integral\Parser\parser.cpp" />
     <ClCompile Include="Integral\Params.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainPage.cpp" />
@@ -125,16 +129,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Integral\GraphIntegr.h" />
+    <ClInclude Include="Integral\GraphIntegr.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Integral\Integral Math\function.h" />
     <ClInclude Include="Integral\Integral Math\integr_math.h" />
-    <ClInclude Include="Integral\Params.h" />
-    <ClInclude Include="MainPage.h" />
+    <ClInclude Include="Integral\math_integral\function.h" />
+    <ClInclude Include="Integral\math_integral\other.h" />
+    <ClInclude Include="Integral\math_integral\Parser\parser.h" />
+    <ClInclude Include="Integral\Params.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MainPage.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Integral\GraphIntegr.resx" />
-    <EmbeddedResource Include="Integral\Params.resx" />
-    <EmbeddedResource Include="MainPage.resx" />
+    <EmbeddedResource Include="Integral\GraphIntegr.resx">
+      <DependentUpon>Integral\GraphIntegr.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Integral\Params.resx">
+      <DependentUpon>Integral\Params.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainPage.resx">
+      <DependentUpon>MainPage.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
