@@ -123,12 +123,14 @@
     <ClCompile Include="math_diffur\function.cpp" />
     <ClCompile Include="math_diffur\methods.cpp" />
     <ClCompile Include="math_diffur\other.cpp" />
+    <ClCompile Include="math_diffur\Parser\parser.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="math_diffur\function.h" />
     <ClInclude Include="math_diffur\other.h" />
+    <ClInclude Include="math_diffur\Parser\parser.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>

@@ -1,10 +1,18 @@
 #include <corecrt_math_defines.h>
 #include <cmath>
+#include "Parser/parser.h"
 #include "other.h"
+
 namespace Diffur {
 	class Function {
 	private:
 		const int type;                // Сама функция-диффур f(x,u)
+
+		parser*const p;
+		const std::string diffur;      // Сама функция-диффур f(x,u) в виде строки
+		const std::string integral_du; // Интеграл ДУ
+		const std::string const_du;    // Константа выраженная из Интеграла ДУ
+
 		const double a;                // Нижняя граница, от которой строится Интеграл ДУ и аппроксимация
 		const double b;                // Нижняя граница, от которой строится Интеграл ДУ и аппроксимация
 		int n;                         // Количество точек (вычисляется при вычислении точек)
@@ -40,15 +48,19 @@ namespace Diffur {
 		double** const inside(const double tay, const int method); // Точка внутри промежутка построения
 
 	public:
-
 		// Конструктор и деструктор \\
 
 		Function(int type, double a, double b, double x0, double u0) :
-			type(type), a(a), b(b), n(NULL), x0(x0), u0(u0), c(answer_const()), dots(new double* [2]) {
+			type(type), p(nullptr), a(a), b(b), n(NULL), x0(x0), u0(u0), c(answer_const()), dots(new double* [2]) {
 			dots[0] = dots[1] = nullptr;
 			null_coordin();
 		};
-		~Function() { delete[]dots[0]; delete[]dots[1]; delete dots; };
+		Function(std::string diffur, std::string integral_du, std::string const_du, double a, double b, double x0, double u0) :
+			type(EOF), p(new parser), diffur(diffur), integral_du(integral_du), const_du(const_du), a(a), b(b), n(NULL), x0(x0), u0(u0), c(answer_const()), dots(new double* [2]) {
+			dots[0] = dots[1] = nullptr;
+			null_coordin();
+		};
+		~Function() { delete[]dots[0]; delete[]dots[1]; delete dots; delete p; };
 
 		// Геттеры \\
 

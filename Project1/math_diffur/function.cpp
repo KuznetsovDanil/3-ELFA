@@ -5,6 +5,7 @@ double Diffur::Function::function_diff(const double x, const double y)const {
     switch (type) {
     case 0: return (-x*x-x*y+y)/x; break;
     case 1: break;// ...
+    default: return p->PARS(diffur, x, y); break;
     }
 }
 
@@ -14,6 +15,7 @@ double Diffur::Function::answer()const {
     switch (type) {
     case 0: return c * pow(M_E, -x) * x - x; break;
     case 1: break; // ...
+    default: return p->PARS(integral_du, x, c); break;
     }
 }
 
@@ -22,6 +24,7 @@ const double Diffur::Function::answer_const()const {
     switch (type) {
     case 0: return (u0 + x0) / (pow(M_E, -x0) * x0); break;
     case 1: break; // ...
+    default: return p->PARS(const_du, x0, u0); break;
     }
 }
 
