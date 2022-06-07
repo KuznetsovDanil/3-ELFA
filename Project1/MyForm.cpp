@@ -13,13 +13,10 @@ System::Void Project1::MyForm::MyForm_Load(System::Object^ sender, System::Event
 
 	a = -10; b = 10;
 	tay = 0.005;
-	method = 2;
+	method = 1;
 	double** dot;
 #ifdef WITH_PARSER
-	type = 8;
-	Integral::Function fun(type, a, b, "sin(x)+cos(x)", "(-cos(y)+sin(y))-(-cos(x)+sin(x))");
-
-	
+	Integral::Function fun(a, b, "sin(x)+cos(x)", "(-cos(y)+sin(y))-(-cos(x)+sin(x))");
 #else
 	type = 1;
 	Integral::Function fun(type, a, b);

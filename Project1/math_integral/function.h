@@ -7,8 +7,11 @@ namespace Integral {
 	class Function {
 	private:
 		const int type;                // Подынтегральная функция
+
+		parser* const p;
 		const std::string fun;         // Подынтегральная функция, в виде строки
 		const std::string integral;    // Интеграл раскрытый по формуле Ньютона-Лейбница
+
 		const double a;                // Нижняя граница
 		const double b;                // Верхняя граница
 		const double answer;           // Интеграл подынтегральной функции
@@ -44,20 +47,20 @@ namespace Integral {
 		// Конструктор и деструктор \\
 
 		Function(int type, double a, double b) :
-			type(type), a(a), b(b), answer(answer_integr()), n(NULL), dots(new double* [2]) {
+			type(type), p(nullptr), a(a), b(b), answer(answer_integr()), n(NULL), dots(new double* [2]) {
 			result = 0;
 			dots[0] = dots[1] = nullptr;
 		};
-		Function(int type, double a, double b, std::string fun, std::string integral) :
-			type(type),fun(fun), integral(integral), a(a), b(b), answer(answer_integr()), n(NULL), dots(new double* [2]) {
+		Function(double a, double b, std::string fun, std::string integral) :
+			type(EOF), p(new parser), fun(fun), integral(integral), a(a), b(b), answer(answer_integr()), n(NULL), dots(new double* [2]) {
 			result = 0;
 			dots[0] = dots[1] = nullptr;
 		};
 		Function(Function& f) :
-			type(f.type), a(f.a), b(f.b), answer(answer_integr()), n(NULL), dots(new double* [2]) {
+			type(f.type), p(f.p == nullptr?nullptr:new parser), fun(f.fun), integral(f.integral), a(f.a), b(f.b), answer(answer_integr()), n(NULL), dots(new double* [2]) {
 			dots[0] = dots[1] = nullptr;
 		}
-		~Function() { delete[]dots[0]; delete[]dots[1]; delete dots; };
+		~Function() { delete[]dots[0]; delete[]dots[1]; delete dots; delete p; };
 
 		// Геттеры \\
 
