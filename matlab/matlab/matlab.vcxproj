@@ -111,12 +111,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Diffur\GraphDiffur.cpp" />
+    <ClCompile Include="Diffur\math_diffur\Difffunction.cpp" />
+    <ClCompile Include="Diffur\math_diffur\Diffmethods.cpp" />
+    <ClCompile Include="Diffur\math_diffur\Diffother.cpp" />
+    <ClCompile Include="Diffur\math_diffur\Parser\Diffparser.cpp" />
+    <ClCompile Include="Diffur\ParamsDiff.cpp" />
     <ClCompile Include="Integral\GraphIntegr.cpp" />
-    <ClCompile Include="Integral\math_integral\function.cpp" />
-    <ClCompile Include="Integral\math_integral\methods.cpp" />
-    <ClCompile Include="Integral\math_integral\other.cpp" />
-    <ClCompile Include="Integral\math_integral\Parser\parser.cpp" />
-    <ClCompile Include="Integral\Params.cpp" />
+    <ClCompile Include="Integral\math_integral\Intfunction.cpp" />
+    <ClCompile Include="Integral\math_integral\Intmethods.cpp" />
+    <ClCompile Include="Integral\math_integral\Intother.cpp" />
+    <ClCompile Include="Integral\math_integral\Parser\Intparser.cpp" />
+    <ClCompile Include="Integral\ParamsIntegr.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainPage.cpp" />
   </ItemGroup>
@@ -129,15 +135,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Diffur\GraphDiffur.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Diffur\math_diffur\Difffunction.h" />
+    <ClInclude Include="Diffur\math_diffur\Diffother.h" />
+    <ClInclude Include="Diffur\math_diffur\Parser\Diffparser.h" />
+    <ClInclude Include="Diffur\ParamsDiff.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Integral\GraphIntegr.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Integral\Integral Math\function.h" />
-    <ClInclude Include="Integral\Integral Math\integr_math.h" />
-    <ClInclude Include="Integral\math_integral\function.h" />
-    <ClInclude Include="Integral\math_integral\other.h" />
-    <ClInclude Include="Integral\math_integral\Parser\parser.h" />
-    <ClInclude Include="Integral\Params.h">
+    <ClInclude Include="Integral\math_integral\Intfunction.h" />
+    <ClInclude Include="Integral\math_integral\Intother.h" />
+    <ClInclude Include="Integral\math_integral\Parser\Intparser.h" />
+    <ClInclude Include="Integral\ParamsIntegr.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MainPage.h">
@@ -145,15 +158,24 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Diffur\GraphDiffur.resx">
+      <DependentUpon>Diffur\GraphDiffur.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diffur\ParamsDiff.resx">
+      <DependentUpon>Diffur\ParamsDiff.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Integral\GraphIntegr.resx">
       <DependentUpon>Integral\GraphIntegr.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Integral\Params.resx">
-      <DependentUpon>Integral\Params.h</DependentUpon>
+    <EmbeddedResource Include="Integral\ParamsIntegr.resx">
+      <DependentUpon>Integral\ParamsIntegr.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Dots.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

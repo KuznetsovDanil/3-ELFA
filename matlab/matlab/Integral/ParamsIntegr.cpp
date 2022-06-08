@@ -1,4 +1,4 @@
-#include "Params.h"
+#include "ParamsIntegr.h"
 #include "GraphIntegr.h"
 
 System::Void matlab::Params::OK(System::Object^ sender, System::EventArgs^ e)
@@ -9,12 +9,12 @@ System::Void matlab::Params::OK(System::Object^ sender, System::EventArgs^ e)
 	int method;
 	if (Check(textBoxA, textBoxB, Stepper, methodBox, s, method, a, b)) return;
 	GraphIntegr^ FormInteger = gcnew GraphIntegr;
-	FormInteger->Show();
 	FormInteger->Расчёт(sender, e, a, b, s,
 		System::Convert::ToString(comboBox1->Text),
 		System::Convert::ToString(comboBox2->Text),
 		System::Convert::ToInt64(methodBox->SelectedIndex),
 		System::Convert::ToInt64(comboBox1->SelectedIndex));
+	FormInteger->Show();
 
 	return;
 }

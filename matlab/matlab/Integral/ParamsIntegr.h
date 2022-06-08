@@ -168,7 +168,7 @@ namespace matlab {
 			this->groupBox4->Dock = System::Windows::Forms::DockStyle::Top;
 			this->groupBox4->Location = System::Drawing::Point(0, 180);
 			this->groupBox4->Name = L"groupBox4";
-			this->groupBox4->Size = System::Drawing::Size(282, 51);
+			this->groupBox4->Size = System::Drawing::Size(282, 50);
 			this->groupBox4->TabIndex = 3;
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Text = L"Интегралл от";
@@ -180,7 +180,7 @@ namespace matlab {
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
 				L"(2*x+1)*e^(-x)", L"sin(x)+cos(x)", L"x^4-x^2+4",
-					L"(2*x^3+1)^4*x^2", L"(1 + sin(x))^3*cos(x)*x", L"(x+3)/(x^2-5*x+6)", L"3/x^2", L"x^2*ln(x)"
+					L"(2*x^3+1)^4*x^2", L"(1+sin(x))^3*cos(x)*x", L"(x+3)/(x^2-5*x+6)", L"3/x^2", L"x^2*ln(x)"
 			});
 			this->comboBox1->Location = System::Drawing::Point(3, 18);
 			this->comboBox1->Name = L"comboBox1";
@@ -192,9 +192,9 @@ namespace matlab {
 			// 
 			this->groupBox5->Controls->Add(this->comboBox2);
 			this->groupBox5->Dock = System::Windows::Forms::DockStyle::Top;
-			this->groupBox5->Location = System::Drawing::Point(0, 231);
+			this->groupBox5->Location = System::Drawing::Point(0, 230);
 			this->groupBox5->Name = L"groupBox5";
-			this->groupBox5->Size = System::Drawing::Size(282, 48);
+			this->groupBox5->Size = System::Drawing::Size(282, 50);
 			this->groupBox5->TabIndex = 4;
 			this->groupBox5->TabStop = false;
 			this->groupBox5->Text = L"Проинтегрированная функция";
@@ -219,9 +219,9 @@ namespace matlab {
 			// 
 			this->groupBox6->Controls->Add(this->methodBox);
 			this->groupBox6->Dock = System::Windows::Forms::DockStyle::Top;
-			this->groupBox6->Location = System::Drawing::Point(0, 279);
+			this->groupBox6->Location = System::Drawing::Point(0, 280);
 			this->groupBox6->Name = L"groupBox6";
-			this->groupBox6->Size = System::Drawing::Size(282, 52);
+			this->groupBox6->Size = System::Drawing::Size(282, 50);
 			this->groupBox6->TabIndex = 6;
 			this->groupBox6->TabStop = false;
 			this->groupBox6->Text = L"График метода";
@@ -233,7 +233,7 @@ namespace matlab {
 			this->methodBox->Font = (gcnew System::Drawing::Font(L"Verdana", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->methodBox->FormattingEnabled = true;
-			this->methodBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Треугольник", L"Трапецевидный", L"Симпсона" });
+			this->methodBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Прямоугольников", L"Трапеций", L"Симпсона" });
 			this->methodBox->Location = System::Drawing::Point(3, 18);
 			this->methodBox->Name = L"methodBox";
 			this->methodBox->Size = System::Drawing::Size(276, 30);
@@ -245,9 +245,9 @@ namespace matlab {
 			this->button1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 16.2F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Underline)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->button1->Location = System::Drawing::Point(0, 331);
+			this->button1->Location = System::Drawing::Point(0, 330);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(282, 82);
+			this->button1->Size = System::Drawing::Size(282, 83);
 			this->button1->TabIndex = 7;
 			this->button1->Text = L"OK";
 			this->button1->UseVisualStyleBackColor = true;

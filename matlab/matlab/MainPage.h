@@ -81,6 +81,7 @@ namespace matlab {
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Диффуры";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &MainPage::Диффуры);
 			// 
 			// MainPage
 			// 
@@ -94,6 +95,7 @@ namespace matlab {
 
 		}
 #pragma endregion
-	private: System::Void Интеграллы(System::Object^ sender, System::EventArgs^ e);
+	private: System::Void Интеграллы(System::Object^, System::EventArgs^);
+	private: System::Void Диффуры(System::Object^, System::EventArgs^);
 	};
 }

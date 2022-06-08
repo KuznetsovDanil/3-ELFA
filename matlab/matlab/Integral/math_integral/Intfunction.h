@@ -1,9 +1,12 @@
 #include <corecrt_math_defines.h>
 #include <cmath>
-#include "Parser/parser.h"
-#include "other.h"
+#include "Parser/Intparser.h"
+#include "Intother.h"
 
 namespace Integral {
+
+	using namespace INTEGRAL_PARS;
+
 	class Function {
 	private:
 		const int type;                // Подынтегральная функция
@@ -24,7 +27,7 @@ namespace Integral {
 
 		// Сеттеры \\
 
-		void write_coordin(int i) { dots[0][i] = drop_trash(x); dots[1][i] = y; };  // Записывает i-ую точку в массив
+		void write_coordin(int i) { dots[0][i] = int_drop_trash(x); dots[1][i] = y; };  // Записывает i-ую точку в массив
 
 		// Остальные методы \\
 

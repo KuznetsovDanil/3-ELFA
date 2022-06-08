@@ -1,4 +1,4 @@
-#include "function.h"
+#include "Intfunction.h"
 
 double Integral::Function::function_integr(double x)const {
 	switch (type) {
@@ -32,7 +32,7 @@ double Integral::Function::answer_integr()const {
 
 double** const Integral::Function::answer_grafic(const double tay){
     clear_data();
-    n = ceil(drop_trash((b - a) / tay)) + 1; // Точки между a и b + сами a и b
+    n = ceil(int_drop_trash((b - a) / tay)) + 1; // Точки между a и b + сами a и b
     create_mass_dots();
 
     // Рассчитываем точку на границе a

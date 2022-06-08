@@ -1,4 +1,4 @@
-#include "function.h"
+#include "Intfunction.h"
 #ifdef OLD
 double integral(double a, double b, int c, int n, int method) {
 
@@ -98,7 +98,7 @@ double** const Integral::Function::integr_methods(const int method, const double
 
 double** const Integral::Function::rectangle(const double tay){
 	clear_data();
-	n = ceil(drop_trash((b - a) / tay)) - 1; // Количество точек между a и b + сами a и b
+	n = ceil(int_drop_trash((b - a) / tay)) - 1; // Количество точек между a и b + сами a и b
 	create_mass_dots();
 	double sum = 0;
 
@@ -122,7 +122,7 @@ double** const Integral::Function::rectangle(const double tay){
 
 double** const Integral::Function::trapeze(const double tay){
 	clear_data();
-	n = ceil(drop_trash((b - a) / tay)) + 1; // Количество точек между a и b + сами a и b
+	n = ceil(int_drop_trash((b - a) / tay)) + 1; // Количество точек между a и b + сами a и b
 	create_mass_dots();
 	double sum = 0;
 
@@ -156,7 +156,7 @@ double** const Integral::Function::trapeze(const double tay){
 double** const Integral::Function::simpson(double tay){
 	clear_data();
 	tay /= 2;
-	n = ceil(drop_trash((b - a) / tay)) + 1; // Точки между a и b + сами a и b
+	n = ceil(int_drop_trash((b - a) / tay)) + 1; // Точки между a и b + сами a и b
 	create_mass_dots();
 	double sum = 0;
 

@@ -1,4 +1,6 @@
-#include "parser.h"
+#include "Intparser.h"
+
+using namespace INTEGRAL_PARS;
 
 parser::parser()
 {

@@ -1,6 +1,6 @@
-#include "other.h"
+#include "Intother.h"
 
-double drop_trash(double arg){
+double int_drop_trash(double arg){
     //  ÷ела€ часть + округленна€ до 6-го знака дробна€ часть
     return (int)arg + round((arg - (int) arg)*pow(10,6))/ pow(10, 6); 
     /*

@@ -112,7 +112,7 @@ namespace matlab {
 			series2->Name = L"Function";
 			this->chart1->Series->Add(series1);
 			this->chart1->Series->Add(series2);
-			this->chart1->Size = System::Drawing::Size(920, 544);
+			this->chart1->Size = System::Drawing::Size(982, 525);
 			this->chart1->TabIndex = 0;
 			this->chart1->Text = L"Graphics";
 			// 
@@ -122,7 +122,7 @@ namespace matlab {
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->ðåçóëüòàòToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(920, 28);
+			this->menuStrip1->Size = System::Drawing::Size(982, 28);
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -204,7 +204,7 @@ namespace matlab {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(920, 572);
+			this->ClientSize = System::Drawing::Size(982, 553);
 			this->Controls->Add(this->chart1);
 			this->Controls->Add(this->menuStrip1);
 			this->Cursor = System::Windows::Forms::Cursors::Cross;
@@ -220,11 +220,6 @@ namespace matlab {
 		}
 #pragma endregion
 
-		//public: double a, b, s, n;
-		//public: double x, y;
-		//public: int num;
-
-//		public: System::Void Ðàñ÷¸ò(System::Object^, System::EventArgs^, double, double, double, double, double);
 		public: System::Void matlab::GraphIntegr::Ðàñ÷¸ò(	System::Object^,
 															System::EventArgs^,
 															double, double, double, String^, String^, int, int);

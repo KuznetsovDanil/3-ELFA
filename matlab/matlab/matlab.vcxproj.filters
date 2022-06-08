@@ -22,16 +22,13 @@
     <Filter Include="Файлы заголовков\Integral">
       <UniqueIdentifier>{415b39ad-6563-4956-aee4-6a51a3963465}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы ресурсов\Integral math">
-      <UniqueIdentifier>{5af8624a-89b8-4d0b-b5ef-7461fda5db4f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Файлы ресурсов\Diffur math">
       <UniqueIdentifier>{3af4695e-1253-4d12-bdd9-89816e2b854e}</UniqueIdentifier>
     </Filter>
     <Filter Include="Файлы заголовков\Furie">
       <UniqueIdentifier>{c8903501-286e-4363-beaf-4ce736cf7797}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы ресурсов\Integral math %28new%29">
+    <Filter Include="Файлы ресурсов\Integral math">
       <UniqueIdentifier>{0c0fbb33-d6cb-4710-9ecf-4a4a6b89f925}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -42,49 +39,81 @@
     <ClCompile Include="Integral\GraphIntegr.cpp">
       <Filter>Файлы заголовков\Integral</Filter>
     </ClCompile>
-    <ClCompile Include="Integral\Params.cpp">
+    <ClCompile Include="Integral\ParamsIntegr.cpp">
       <Filter>Файлы заголовков\Integral</Filter>
     </ClCompile>
     <ClCompile Include="MainPage.cpp">
       <Filter>Файлы заголовков\MainPage</Filter>
     </ClCompile>
-    <ClCompile Include="Integral\math_integral\function.cpp">
-      <Filter>Файлы ресурсов\Integral math %28new%29</Filter>
+    <ClCompile Include="Integral\math_integral\Intfunction.cpp">
+      <Filter>Файлы ресурсов\Integral math</Filter>
     </ClCompile>
-    <ClCompile Include="Integral\math_integral\methods.cpp">
-      <Filter>Файлы ресурсов\Integral math %28new%29</Filter>
+    <ClCompile Include="Integral\math_integral\Intmethods.cpp">
+      <Filter>Файлы ресурсов\Integral math</Filter>
     </ClCompile>
-    <ClCompile Include="Integral\math_integral\other.cpp">
-      <Filter>Файлы ресурсов\Integral math %28new%29</Filter>
+    <ClCompile Include="Integral\math_integral\Intother.cpp">
+      <Filter>Файлы ресурсов\Integral math</Filter>
     </ClCompile>
-    <ClCompile Include="Integral\math_integral\Parser\parser.cpp">
-      <Filter>Файлы ресурсов\Integral math %28new%29</Filter>
+    <ClCompile Include="Integral\math_integral\Parser\Intparser.cpp">
+      <Filter>Файлы ресурсов\Integral math</Filter>
+    </ClCompile>
+    <ClCompile Include="Diffur\GraphDiffur.cpp">
+      <Filter>Файлы заголовков\Diffur</Filter>
+    </ClCompile>
+    <ClCompile Include="Diffur\ParamsDiff.cpp">
+      <Filter>Файлы заголовков\Diffur</Filter>
+    </ClCompile>
+    <ClCompile Include="Diffur\math_diffur\Difffunction.cpp">
+      <Filter>Файлы ресурсов\Diffur math</Filter>
+    </ClCompile>
+    <ClCompile Include="Diffur\math_diffur\Diffmethods.cpp">
+      <Filter>Файлы ресурсов\Diffur math</Filter>
+    </ClCompile>
+    <ClCompile Include="Diffur\math_diffur\Diffother.cpp">
+      <Filter>Файлы ресурсов\Diffur math</Filter>
+    </ClCompile>
+    <ClCompile Include="Diffur\math_diffur\Parser\Diffparser.cpp">
+      <Filter>Файлы ресурсов\Diffur math</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Integral\GraphIntegr.h">
       <Filter>Файлы заголовков\Integral</Filter>
     </ClInclude>
-    <ClInclude Include="Integral\Params.h">
+    <ClInclude Include="Integral\ParamsIntegr.h">
       <Filter>Файлы заголовков\Integral</Filter>
     </ClInclude>
     <ClInclude Include="MainPage.h">
       <Filter>Файлы заголовков\MainPage</Filter>
     </ClInclude>
-    <ClInclude Include="Integral\Integral Math\function.h">
+    <ClInclude Include="Integral\math_integral\Intfunction.h">
       <Filter>Файлы ресурсов\Integral math</Filter>
     </ClInclude>
-    <ClInclude Include="Integral\Integral Math\integr_math.h">
+    <ClInclude Include="Integral\math_integral\Intother.h">
       <Filter>Файлы ресурсов\Integral math</Filter>
     </ClInclude>
-    <ClInclude Include="Integral\math_integral\function.h">
-      <Filter>Файлы ресурсов\Integral math %28new%29</Filter>
+    <ClInclude Include="Integral\math_integral\Parser\Intparser.h">
+      <Filter>Файлы ресурсов\Integral math</Filter>
     </ClInclude>
-    <ClInclude Include="Integral\math_integral\other.h">
-      <Filter>Файлы ресурсов\Integral math %28new%29</Filter>
+    <ClInclude Include="Diffur\GraphDiffur.h">
+      <Filter>Файлы заголовков\Diffur</Filter>
     </ClInclude>
-    <ClInclude Include="Integral\math_integral\Parser\parser.h">
-      <Filter>Файлы ресурсов\Integral math %28new%29</Filter>
+    <ClInclude Include="Diffur\ParamsDiff.h">
+      <Filter>Файлы заголовков\Diffur</Filter>
     </ClInclude>
+    <ClInclude Include="Diffur\math_diffur\Difffunction.h">
+      <Filter>Файлы ресурсов\Diffur math</Filter>
+    </ClInclude>
+    <ClInclude Include="Diffur\math_diffur\Diffother.h">
+      <Filter>Файлы ресурсов\Diffur math</Filter>
+    </ClInclude>
+    <ClInclude Include="Diffur\math_diffur\Parser\Diffparser.h">
+      <Filter>Файлы ресурсов\Diffur math</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Dots.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
   </ItemGroup>
 </Project>

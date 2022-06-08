@@ -8,15 +8,16 @@
 #include <string>
 #include <corecrt_math_defines.h>
 #include <cmath>
+namespace INTEGRAL_PARS {
+	class parser
+	{
+	public:
+		parser();
+		~parser();
+		double PARS(std::string, double);
+		double PARS(std::string, double, double);
 
-class parser
-{
-public:
-	parser();
-	~parser();
-	double PARS(std::string, double);
-	double PARS(std::string, double, double);
-
-private:
-	double pars(char*);
-};
+	private:
+		double pars(char*);
+	};
+}
