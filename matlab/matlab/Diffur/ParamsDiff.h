@@ -300,8 +300,8 @@ namespace matlab {
 			this->comboBox4->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->comboBox4->FormattingEnabled = true;
 			this->comboBox4->Items->AddRange(gcnew cli::array< System::Object^  >(4) {
-				L"Эйлера", L"Предиктор корректор", L"Рюнге Кут 3",
-					L"Рюнге Кут 4"
+				L"Эйлера", L"Предиктор корректор", L"Рунге Кут 3",
+					L"Рунге Кут 4"
 			});
 			this->comboBox4->Location = System::Drawing::Point(3, 18);
 			this->comboBox4->Name = L"comboBox4";
@@ -357,6 +357,14 @@ namespace matlab {
 
 		}
 #pragma endregion
+
 	private: System::Void OK(System::Object^, System::EventArgs^);
+	private: bool MKWCHECK(System::Windows::Forms::TextBox^);
+	private: bool MKWCHECK(System::Windows::Forms::ComboBox^);
+	private: bool Check(System::Windows::Forms::TextBox^,
+		System::Windows::Forms::TextBox^,
+		System::Windows::Forms::TextBox^,
+		System::Windows::Forms::TextBox^,
+		System::Windows::Forms::TextBox^);
 };
 }
