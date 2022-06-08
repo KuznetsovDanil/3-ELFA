@@ -206,7 +206,7 @@ namespace matlab {
 			this->comboBox2->FormattingEnabled = true;
 			this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(8) {
 				L"-(2*b+3)*e^(-b)-(-(2*a+3)*e^(-a))", L"(-cos(b)+sin(b))-(-cos(a)+sin(a))",
-					L"b^5/5-b^3/3+4*b-(a^5/5-a^3/3+4*a)", L"((2*b^3 + 1)^5)-((2 * a^3+1)^5)", L"(((1+sin(b))^4)/4)-(((1+sin(a))^4)/4)", L"-5/(b-2)+6/(b-3)-(-5/(a-2)+6/(a-3))",
+					L"b^5/5-b^3/3+4*b-(a^5/5-a^3/3+4*a)", L"((2*b^3+1)^5)-((2*a^3+1)^5)", L"(((1+sin(b))^4)/4)-(((1+sin(a))^4)/4)", L"-5/(b-2)+6/(b-3)-(-5/(a-2)+6/(a-3))",
 					L"-3/b-(-3/a)", L"(b^3)/3*ln(b)-(b^3)/9-(a^3)/3*ln(a)-(a^3)/9"
 			});
 			this->comboBox2->Location = System::Drawing::Point(3, 18);
@@ -233,12 +233,11 @@ namespace matlab {
 			this->methodBox->Font = (gcnew System::Drawing::Font(L"Verdana", 10.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->methodBox->FormattingEnabled = true;
-			this->methodBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"1", L"2", L"3" });
+			this->methodBox->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Треугольник", L"Трапецевидный", L"Симпсона" });
 			this->methodBox->Location = System::Drawing::Point(3, 18);
 			this->methodBox->Name = L"methodBox";
 			this->methodBox->Size = System::Drawing::Size(276, 30);
 			this->methodBox->TabIndex = 0;
-			this->methodBox->Text = L"1";
 			// 
 			// button1
 			// 

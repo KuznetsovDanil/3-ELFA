@@ -10,7 +10,7 @@ double Integral::Function::function_integr(double x)const {
     case 5: return (x + 3) / (pow(x, 2) - 5 * x + 6); break;
     case 6: return 3 / pow(x, 2); break;
     case 7: return pow(x, 2) * log(x); break;
-    case 8: {parser p; return p.PARS(fun, x); break; }
+    case -1: {return p->PARS(fun, x); break; }
     default: break;
     }
 }
@@ -25,7 +25,7 @@ double Integral::Function::answer_integr()const {
     case 5: return -5 / (b - 2) + 6 / (b - 3) - (-5 / (a - 2) + 6 / (a - 3)); break;
     case 6: return -3 / b - (-3 / a); break;
     case 7: return pow(b, 3) / 3 * log(b) - pow(b, 3) / 9 - (pow(a, 3) / 3 * log(a) - pow(a, 3) / 9); break;
-    case 8: {parser p; return p.PARS(integral, a, b); break; }
+    case -1: { return p->PARS(integral, a, b); break; }
     default: break;
     }
 }

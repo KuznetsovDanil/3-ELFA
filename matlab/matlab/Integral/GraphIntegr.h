@@ -225,6 +225,8 @@ namespace matlab {
 		//public: int num;
 
 //		public: System::Void Расчёт(System::Object^, System::EventArgs^, double, double, double, double, double);
-		public: System::Void matlab::GraphIntegr::Расчёт(System::Object^, System::EventArgs^, double, double, double, String^, String^, int);
+		public: System::Void matlab::GraphIntegr::Расчёт(	System::Object^,
+															System::EventArgs^,
+															double, double, double, String^, String^, int, int);
 };
 }

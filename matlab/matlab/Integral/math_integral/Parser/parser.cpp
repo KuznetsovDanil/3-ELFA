@@ -65,12 +65,8 @@ double parser::PARS(std::string inLine, double x, double  y)
             }
             ++Line; i++;
 
-            {
-                while (*Line != '(') {
-                    func += *Line;
-                    ++Line; i++;
-                }
-                ++Line; i++;
+            if (func == "log") {
+
                 while (*Line != ')') {
                     if (*Line == 'x') {
                         argv += std::to_string(x);
@@ -90,14 +86,11 @@ double parser::PARS(std::string inLine, double x, double  y)
                     ++Line; i++;
                 }
                 ++Line; i++;
-            }
 
-            char* CHargv = new char[argv.length() + 1];
-            CHargv[argv.length()] = '\0';
+                char* CHargv = new char[argv.length() + 1];
+                CHargv[argv.length()] = '\0';
 
-            for (int j = 0; j < argv.length(); j++) { CHargv[j] = argv[j]; }
-
-            if (func == "log") {
+                for (int j = 0; j < argv.length(); j++) { CHargv[j] = argv[j]; }
 
                 std::string argv2;
 
@@ -139,10 +132,45 @@ double parser::PARS(std::string inLine, double x, double  y)
                 delete[] CHargv2;
                 delete[] CHargv;
             }
-            else if (func == "ln")      outLine += std::to_string(log(pars(CHargv)));
-            else {/**/ }
+            else if (func == "ln") {
 
-            delete[] CHargv;
+                {
+                    while (*Line != '(') {
+                        func += *Line;
+                        ++Line; i++;
+                    }
+                    ++Line; i++;
+                    while (*Line != ')') {
+                        if (*Line == 'x') {
+                            argv += std::to_string(x);
+                        }
+                        else if (*Line == 'y') {
+                            argv += std::to_string(y);
+                        }
+                        else if (*Line == 'a') {
+                            argv += std::to_string(x);
+                        }
+                        else if (*Line == 'b') {
+                            argv += std::to_string(y);
+                        }
+                        else {
+                            argv += *Line;
+                        }
+                        ++Line; i++;
+                    }
+                    ++Line; i++;
+                }
+
+                char* CHargv = new char[argv.length() + 1];
+                CHargv[argv.length()] = '\0';
+
+                for (int j = 0; j < argv.length(); j++) { CHargv[j] = argv[j]; }
+
+                outLine += std::to_string(log(pars(CHargv)));
+
+                delete[] CHargv;
+}
+            else {/**/ }
 
         }
         else if (*Line == 'x') { while (*Line == 'x') { outLine += std::to_string(x); ++Line; i++; } }
@@ -231,7 +259,12 @@ double parser::PARS(std::string inLine, double x)
                     }
                     ++Line; i++;
                     while (*Line != ')') {
-                        argv2 += *Line;
+                        if (*Line == 'x') {
+                            argv2 += std::to_string(x);
+                        }
+                        else {
+                            argv2 += *Line;
+                        }
                         ++Line; i++;
                     }
                     ++Line; i++;
@@ -249,7 +282,12 @@ double parser::PARS(std::string inLine, double x)
                     }
                     ++Line; i++;
                     while (*Line != ')') {
-                        argv += *Line;
+                        if (*Line == 'x') {
+                            argv += std::to_string(x);
+                        }
+                        else {
+                            argv += *Line;
+                        }
                         ++Line; i++;
                     }
                     ++Line; i++;
@@ -269,16 +307,15 @@ double parser::PARS(std::string inLine, double x)
             else if (func == "ln") {
 
                 {
-                    while (*Line != '(') {
-                        func += *Line;
-                        ++Line; i++;
-                    }
-                    ++Line; i++;
                     while (*Line != ')') {
-                        argv += *Line;
+                        if (*Line == 'x') {
+                            argv += std::to_string(x);
+                        }
+                        else {
+                            argv += *Line;
+                        }
                         ++Line; i++;
                     }
-                    ++Line; i++;
                 }
 
                 char* CHargv = new char[argv.length() + 1];

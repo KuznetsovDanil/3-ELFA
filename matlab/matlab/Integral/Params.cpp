@@ -3,12 +3,20 @@
 
 System::Void matlab::Params::OK(System::Object^ sender, System::EventArgs^ e)
 {
+	if (methodBox->SelectedIndex == -1) { MessageBox::Show("Вы не выбрали метод.", "Внимание!"); return; }
+
 	double a, b, s;
 	int method;
 	if (Check(textBoxA, textBoxB, Stepper, methodBox, s, method, a, b)) return;
 	GraphIntegr^ FormInteger = gcnew GraphIntegr;
 	FormInteger->Show();
-	FormInteger->Расчёт(sender, e, a, b, s, System::Convert::ToString(comboBox1->Text), System::Convert::ToString(comboBox2->Text), System::Convert::ToInt64(methodBox->Text));
+	FormInteger->Расчёт(sender, e, a, b, s,
+		System::Convert::ToString(comboBox1->Text),
+		System::Convert::ToString(comboBox2->Text),
+		System::Convert::ToInt64(methodBox->SelectedIndex),
+		System::Convert::ToInt64(comboBox1->SelectedIndex));
+
+	return;
 }
 
 //Функция проверка корректного ввода
@@ -53,7 +61,7 @@ bool matlab::Params::Check(	System::Windows::Forms::TextBox^ ta,
 			return true;
 		}
 		//Принятие переменных
-		method = System::Convert::ToInt64(tm->Text);
+		method = System::Convert::ToInt64(tm->SelectedIndex);
 		s = System::Convert::ToDouble(ts->Text);
 		a = System::Convert::ToDouble(ta->Text);
 		b = System::Convert::ToDouble(tb->Text);
