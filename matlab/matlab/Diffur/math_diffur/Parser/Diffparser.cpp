@@ -37,7 +37,7 @@ double parser::PARS(std::string inLine, double x, double  y)
                         else if (*Line == 'b') {
                             argv += std::to_string(y);
                         }
-                        else if (*Line == 'ñ') {
+                        else if (*Line == 'c') {
                             argv += std::to_string(y);
                         }
                         else {
@@ -85,7 +85,7 @@ double parser::PARS(std::string inLine, double x, double  y)
                     else if (*Line == 'b') {
                         argv += std::to_string(y);
                     }
-                    else if (*Line == 'ñ') {
+                    else if (*Line == 'c') {
                         argv += std::to_string(y);
                     }
                     else {
@@ -121,7 +121,7 @@ double parser::PARS(std::string inLine, double x, double  y)
                     else if (*Line == 'b') {
                         argv2 += std::to_string(y);
                     }
-                    else if (*Line == 'ñ') {
+                    else if (*Line == 'c') {
                         argv += std::to_string(y);
                     }
                     else {
@@ -159,7 +159,7 @@ double parser::PARS(std::string inLine, double x, double  y)
                         else if (*Line == 'b') {
                             argv += std::to_string(y);
                         }
-                        else if (*Line == 'ñ') {
+                        else if (*Line == 'c') {
                             argv += std::to_string(y);
                         }
                         else {
@@ -186,7 +186,7 @@ double parser::PARS(std::string inLine, double x, double  y)
         else if (*Line == 'y') { while (*Line == 'y') { outLine += std::to_string(y); ++Line; i++; } }
         else if (*Line == 'a') { while (*Line == 'a') { outLine += std::to_string(x); ++Line; i++; } }
         else if (*Line == 'b') { while (*Line == 'b') { outLine += std::to_string(y); ++Line; i++; } }
-        else if (*Line == 'ñ') { while (*Line == 'ñ') { outLine += std::to_string(y); ++Line; i++; } }
+        else if (*Line == 'c') { while (*Line == 'c') { outLine += std::to_string(y); ++Line; i++; } }
         else if (*Line == 'e') {
             while (*Line == 'e') { outLine += std::to_string(M_E); ++Line; i++; }
         }
